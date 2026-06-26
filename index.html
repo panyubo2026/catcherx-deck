@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CatcherX · AI 流量增长一站式解决服务商</title>
+<style>
+  :root{
+    --bg:#070b16; --bg2:#0c1326; --ink:#eaf0ff; --mut:#8a97b8;
+    --cy:#22d3ee; --vi:#8b5cf6; --line:rgba(255,255,255,.08);
+    --card:rgba(255,255,255,.035);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+    background:radial-gradient(1200px 800px at 70% -10%,rgba(139,92,246,.18),transparent),
+               radial-gradient(1000px 700px at -10% 110%,rgba(34,211,238,.14),transparent),
+               var(--bg);
+    color:var(--ink); overflow:hidden;
+  }
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    padding:7vh 9vw;opacity:0;transform:translateY(20px) scale(.99);
+    transition:opacity .5s ease,transform .5s ease;pointer-events:none;
+  }
+  .slide.active{opacity:1;transform:none;pointer-events:auto}
+  .kick{color:var(--cy);font-weight:700;letter-spacing:.18em;font-size:.78rem;text-transform:uppercase;margin-bottom:18px}
+  h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.15;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
+  .sub{font-size:clamp(1rem,1.7vw,1.35rem);color:var(--mut);margin-top:18px;max-width:60ch;line-height:1.6}
+  .grad{background:linear-gradient(100deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+  ul{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:16px;max-width:72ch}
+  li{position:relative;padding-left:30px;font-size:clamp(1rem,1.55vw,1.25rem);line-height:1.5;color:#d6def5}
+  li::before{content:"";position:absolute;left:0;top:.55em;width:11px;height:11px;border-radius:3px;
+    background:linear-gradient(135deg,var(--cy),var(--vi))}
+  li b{color:#fff}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+  .card .t{font-weight:700;font-size:1.05rem;margin-bottom:6px}
+  .card .d{color:var(--mut);font-size:.92rem;line-height:1.45}
+  .tag{display:inline-block;margin-top:12px;font-size:.72rem;letter-spacing:.05em;color:var(--cy);
+    border:1px solid rgba(34,211,238,.35);border-radius:99px;padding:3px 10px}
+  .tag.sub2{color:var(--vi);border-color:rgba(139,92,246,.4)}
+  .bars{display:flex;flex-direction:column;gap:22px;margin-top:26px;max-width:60ch}
+  .bar .lab{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:8px;color:#cdd6f0}
+  .track{height:14px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
+  .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cy),var(--vi))}
+  .ai{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;font-size:1.05rem;line-height:1.7;color:#cdd6f0}
+  .ai .q{color:var(--cy);font-weight:700;margin-bottom:12px}
+  .miss{color:#ff6b6b;border:1px dashed rgba(255,107,107,.5);border-radius:8px;padding:2px 8px;font-size:.9rem}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;position:relative}
+  .step .n{font-size:2rem;font-weight:800;color:transparent;background:linear-gradient(135deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text}
+  .step .st{font-weight:700;margin:8px 0 6px;font-size:1.1rem}
+  .step .sd{color:var(--mut);font-size:.92rem;line-height:1.45}
+  .cta{margin-top:22px;display:inline-flex;align-items:center;gap:12px;background:linear-gradient(100deg,var(--cy),var(--vi));
+    color:#06101f;font-weight:800;padding:16px 30px;border-radius:99px;font-size:1.1rem}
+  .brand{position:fixed;left:9vw;bottom:4vh;font-weight:800;letter-spacing:.02em;color:var(--mut);font-size:.85rem;z-index:5}
+  .brand b{color:#fff}
+  .counter{position:fixed;right:9vw;bottom:4vh;color:var(--mut);font-size:.85rem;z-index:5}
+  .dots{position:fixed;left:50%;transform:translateX(-50%);bottom:3.4vh;display:flex;gap:9px;z-index:5}
+  .dot{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.18);cursor:pointer;transition:.25s}
+  .dot.on{background:linear-gradient(135deg,var(--cy),var(--vi));width:26px}
+  .logo{font-size:clamp(3rem,9vw,7rem);font-weight:900;letter-spacing:-.03em}
+  .logo .x{background:linear-gradient(120deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hint{position:fixed;right:9vw;top:4vh;color:var(--mut);font-size:.75rem;z-index:5;opacity:.6}
+  table{border-collapse:collapse;margin-top:26px;width:100%;max-width:80ch;font-size:1rem}
+  td,th{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+  th{color:var(--cy);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+  td b{color:#fff}
+  .small{color:var(--mut)}
+  .slogan{font-size:clamp(1.4rem,2.7vw,2.2rem);font-weight:800;color:#fff;margin-top:22px;padding-left:16px;border-left:4px solid var(--cy)}
+  .logos{display:flex;flex-wrap:wrap;gap:13px;margin:24px 0 4px}
+  .lg{display:inline-flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 17px;font-weight:700;font-size:1.02rem;color:#dbe4fb}
+  .lg::before{content:"";width:13px;height:13px;border-radius:50%;background:var(--dot,linear-gradient(135deg,var(--cy),var(--vi)))}
+  .callout{margin-top:24px;background:linear-gradient(100deg,rgba(34,211,238,.13),rgba(139,92,246,.13));border:1px solid rgba(139,92,246,.45);border-radius:16px;padding:20px 26px;font-size:clamp(1.1rem,1.9vw,1.5rem);font-weight:700;color:#fff;display:inline-block}
+  .deliver{display:flex;flex-direction:column;gap:14px;margin-top:20px}
+  .pkg{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 24px}
+  .pkg h3{font-size:1.2rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:9px}
+  .pkg h3::before{content:"";width:9px;height:22px;border-radius:3px;background:linear-gradient(135deg,var(--cy),var(--vi))}
+  .pkg .metrics{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
+  .pkg .metrics span{font-size:.72rem;color:var(--cy);border:1px solid rgba(34,211,238,.3);border-radius:8px;padding:4px 7px}
+  .pkg ul{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+  .pkg li{font-size:.86rem;padding-left:17px;line-height:1.35;color:#cdd6f0}
+  .pkg li::before{width:7px;height:7px;top:.42em}
+  .pkg li b{color:var(--cy)}
+  .qrwrap{display:flex;align-items:center;gap:26px;margin-top:22px}
+  .qr{height:215px;width:auto;border-radius:14px;background:#fff;padding:6px}
+  .qrtext .cta-lite{font-weight:800;font-size:clamp(1.4rem,2.4vw,1.9rem);background:linear-gradient(100deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+  .qrtext .note{color:#cdd6f0;font-size:1.15rem}
+  @media(max-width:760px){.two,.cards,.steps,.deliver{grid-template-columns:1fr}}
+  @media print{
+    @page{size:1280px 720px;margin:0}
+    *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+    html,body{height:auto;overflow:visible}
+    .hint,.dots,.counter,.brand{display:none!important}
+    .deck{height:auto;width:auto;position:static}
+    .slide{
+      position:relative;inset:auto;width:1280px;height:716px;overflow:hidden;
+      opacity:1!important;transform:none!important;
+      background:radial-gradient(1200px 800px at 70% -10%,rgba(139,92,246,.18),transparent),
+                 radial-gradient(1000px 700px at -10% 110%,rgba(34,211,238,.14),transparent),
+                 var(--bg);
+    }
+    .slide + .slide{page-break-before:always;break-before:page}
+  }
+</style>
+</head>
+<body>
+<div class="hint">← / → 翻页</div>
+<div class="deck" id="deck">
+
+  <!-- P1 -->
+  <section class="slide active">
+    <div class="logo">Catcher<span class="x">X</span></div>
+    <h2 style="margin-top:24px">AI 流量增长<span class="grad">一站式解决服务商</span></h2>
+    <p class="slogan">让获客优势,变成护城河</p>
+  </section>
+
+  <!-- P2 -->
+  <section class="slide">
+    <div class="kick">趋势 · 为什么是现在</div>
+    <h2>获客入口正在被重写:<br>用户不再"搜索",而是<span class="grad">"问 AI"</span></h2>
+    <div class="logos">
+      <span class="lg" style="--dot:#10a37f">ChatGPT</span>
+      <span class="lg" style="--dot:linear-gradient(135deg,#4285f4,#9b72cb)">Gemini</span>
+      <span class="lg" style="--dot:#d97757">Claude</span>
+      <span class="lg" style="--dot:#20b8cd">Perplexity</span>
+      <span class="lg" style="--dot:linear-gradient(135deg,#4285f4,#ea4335,#fbbc05,#34a853)">Google</span>
+      <span class="lg" style="--dot:#0078d4">Bing</span>
+    </div>
+    <ul>
+      <li>越来越多用户用 ChatGPT / Perplexity / Google AI 概览做决策,而非翻搜索结果</li>
+      <li><b>AI 的回答里没有你 = 你不存在</b></li>
+    </ul>
+    <div class="callout"><span class="grad">新规则</span> = 传统 SEO(被搜到) + GEO(被 AI 引用)</div>
+  </section>
+
+  <!-- P3 -->
+  <section class="slide">
+    <div class="kick">痛点 · 此刻 AI 怎么介绍你</div>
+    <div class="two">
+      <div>
+        <h2>用户问 AI"最好的加密交易所 / 支付方案",<span class="grad">答案里有你吗?</span></h2>
+        <ul>
+          <li><b>落地页很差、甚至没有落地页</b></li>
+          <li>多语种内容缺失,触达不了全球用户</li>
+          <li>内容不被 AI 引用,"推荐位"被竞品占据</li>
+          <li>品牌词的 AI 结果被第三方 / 负面信息主导</li>
+        </ul>
+      </div>
+      <div class="ai">
+        <div class="q">"最好用的加密交易所 / 稳定币支付有哪些?"</div>
+        <div>根据公开信息,推荐:<br>· 竞品 A —— 资料完整、被广泛引用<br>· 竞品 B —— 多语种内容齐全<br>· 竞品 C …</div>
+        <div style="margin-top:16px">你的品牌 <span class="miss">未被提及</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- P4 -->
+  <section class="slide">
+    <div class="kick">解法 · AI 流量增长引擎</div>
+    <h2>被 AI 推荐 = <span class="grad">规则理解 × 权威内容 × 分发渠道</span></h2>
+    <div class="cards">
+      <div class="card"><div class="t">规则理解</div><div class="d">持续追踪大模型与搜索引擎的引用机制,知道 AI"凭什么"推荐</div></div>
+      <div class="card"><div class="t">权威内容</div><div class="d">8 年资深内容创作与流量运作经验,深谙结构化内容</div></div>
+      <div class="card"><div class="t">分发渠道</div><div class="d">高权重渠道发布 + 落地页承接 + 持续监测优化</div></div>
+    </div>
+    <p class="sub">我们把这三块,做成一套<b style="color:#fff">可交付、可衡量</b>的 AI 流量增长服务。</p>
+  </section>
+
+  <!-- P6 -->
+  <section class="slide">
+    <div class="kick">产品交付</div>
+    <h2>三层产品,覆盖从<span class="grad">数据</span>到<span class="grad">定制内容站</span></h2>
+    <div class="deliver">
+      <div class="pkg">
+        <div><h3>API 服务</h3></div>
+        <ul>
+          <li>低延时获取 <b>300+</b> 全球权威信源动态</li>
+          <li>低延时获取 ChainCatcher 独家文章与研报</li>
+          <li>低延时获取 <b>30,000</b> 链上地址资金追踪</li>
+          <li>支持繁中、英、韩、日等 <b>4</b> 语种切换</li>
+          <li>支持 ChatGPT 智能提炼</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div><h3>内容创作</h3><div class="metrics"><span>月产 10 篇</span><span>年 120 篇</span><span>2000–3000 字/篇</span></div></div>
+        <ul>
+          <li>围绕产品、场景、问题、对比词建立覆盖</li>
+          <li>品牌知识库引用,减少泛泛的 AI 内容</li>
+          <li>内链、外链引用与基础 Schema 结构化</li>
+          <li>标题、摘要、FAQ 与 CTA 转化路径设计</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div><h3>定制化服务</h3></div>
+        <ul>
+          <li>定制化、高友好度的 <b>Google + AI</b> 内容站</li>
+          <li>月交付 <b>50 篇</b>深度文(2000–3000 字),8 年主笔把关</li>
+          <li>内容分发全球 <b>100+</b> 高权重渠道</li>
+          <li><b>3 秒</b>获取 ChainCatcher 独家文章与一手快讯</li>
+          <li>繁中/英/韩/日/俄等 <b>15+</b> 语种本地化适配</li>
+          <li>每月 Google+AI 关键词策略会,围绕数据验收</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- P7 -->
+  <section class="slide">
+    <div class="kick">我们用数据说话</div>
+    <h2>不止"做内容",更交付<span class="grad">可衡量的增长</span></h2>
+    <p class="sub" style="margin-top:14px">每个项目,我们都以统一口径追踪、并定期出具增长报告:</p>
+    <div class="bars">
+      <div class="bar"><div class="lab"><span>AI 被引用次数</span><span>投放前 → 投放后</span></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
+      <div class="bar"><div class="lab"><span>目标关键词可见度</span><span>投放前 → 投放后</span></div><div class="track"><div class="fill" style="width:64%"></div></div></div>
+      <div class="bar"><div class="lab"><span>自然流量 / 线索</span><span>投放前 → 投放后</span></div><div class="track"><div class="fill" style="width:52%"></div></div></div>
+    </div>
+    <p class="small" style="margin-top:18px">* 图示为指标口径示意 · 真实客户案例陆续公布</p>
+  </section>
+
+  <!-- P8 -->
+  <section class="slide">
+    <div class="kick">现在就开始</div>
+    <h2>第一步,先<span class="grad">免费看清</span>你的现状</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div class="st">免费 AI 流量诊断</div><div class="sd">添加微信,5 分钟拿到可见度评分与差距报告</div></div>
+      <div class="step"><div class="n">02</div><div class="st">定制方案</div><div class="sd">基于诊断,给出内容 + 分发 + 落地页组合与报价</div></div>
+      <div class="step"><div class="n">03</div><div class="st">持续增长</div><div class="sd">订阅式监测,数据驱动迭代</div></div>
+    </div>
+    <div class="qrwrap">
+      <img class="qr" src="catcherx-wechat.png" alt="微信二维码" width="161" height="215">
+      <div class="qrtext">
+        <div class="cta-lite">📩 扫码添加微信</div>
+        <div class="note">领取你的 AI 流量诊断报告</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="brand">Catcher<b>X</b> · AI 流量增长一站式解决服务商</div>
+<div class="counter"><span id="cur">1</span> / <span id="tot"></span></div>
+<div class="dots" id="dots"></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  document.getElementById('tot').textContent=slides.length;
+  const dots=document.getElementById('dots');
+  let i=0;
+  slides.forEach((_,k)=>{const d=document.createElement('div');d.className='dot'+(k===0?' on':'');d.onclick=()=>go(k);dots.appendChild(d)});
+  const dotEls=[...document.querySelectorAll('.dot')];
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    dotEls.forEach((d,k)=>d.classList.toggle('on',k===i));
+    document.getElementById('cur').textContent=i+1;
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' ')go(i+1);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(i-1);
+  });
+  document.getElementById('deck').addEventListener('click',e=>{
+    if(e.target.closest('.dot'))return;
+    go(e.clientX>window.innerWidth/2?i+1:i-1);
+  });
+</script>
+</body>
+</html>
