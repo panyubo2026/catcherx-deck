@@ -41,6 +41,14 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
   .card .t{font-weight:700;font-size:1.05rem;margin-bottom:6px}
   .card .d{color:var(--mut);font-size:.92rem;line-height:1.45}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center}
+  .stat .big{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:900;line-height:1;background:linear-gradient(120deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .cap{color:var(--mut);font-size:.9rem;margin-top:10px;line-height:1.4}
+  .stat .cap b{color:#dbe4fb}
+  .proofbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:9px 16px;font-size:.98rem;color:#cdd6f0;font-weight:600}
+  .chip b{color:#fff}
   .tag{display:inline-block;margin-top:12px;font-size:.72rem;letter-spacing:.05em;color:var(--cy);
     border:1px solid rgba(34,211,238,.35);border-radius:99px;padding:3px 10px}
   .tag.sub2{color:var(--vi);border-color:rgba(139,92,246,.4)}
@@ -170,6 +178,25 @@
       <div class="card"><div class="t">分发渠道</div><div class="d">高权重渠道发布 + 落地页承接 + 持续监测优化</div></div>
     </div>
     <p class="sub">我们把这三块,做成一套<b style="color:#fff">可交付、可衡量</b>的 AI 流量增长服务。</p>
+  </section>
+
+  <!-- P5 · 为什么是我们 -->
+  <section class="slide">
+    <div class="kick">为什么是我们 · GEO 实证</div>
+    <h2>我们不是"开始做 GEO"——ChainCatcher <span class="grad">已经是 AI 与搜索的权威信息源</span></h2>
+    <div class="stats">
+      <div class="stat"><div class="big">全球第一</div><div class="cap"><b>AI 平台流量份额</b><br>内容被主流 AI 高度认可,可作 GEO 核心信息源</div></div>
+      <div class="stat"><div class="big">行业第一</div><div class="cap"><b>SEO 表现</b><br>12 类 Google 自然搜索流量份额全网领先</div></div>
+      <div class="stat"><div class="big">100+</div><div class="cap"><b>全球高权重分发渠道</b><br>社区 / 垂直 / 传统 / 海外多语种</div></div>
+    </div>
+    <div class="proofbar">
+      <span class="chip"><b>2200万+</b> 全网用户</span>
+      <span class="chip"><b>50亿+</b> 累计曝光</span>
+      <span class="chip"><b>6万+</b> 原创内容</span>
+      <span class="chip"><b>1200万+</b> 月均 PV</span>
+    </div>
+    <div class="callout" style="font-size:clamp(1rem,1.6vw,1.25rem)">📌 「RootData 榜单」「CyberConnect 创始人」等内容,已在 Google 与主流 AI 回答中<span class="grad">首页/首位引用</span></div>
+    <p class="small" style="margin-top:14px">头部交易所合作案例:单项目触达用户 <b style="color:#fff">30万+</b> · 平台宣传 PV <b style="color:#fff">50万+</b></p>
   </section>
 
   <!-- P6 -->
