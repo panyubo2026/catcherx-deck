@@ -131,7 +131,19 @@
   .layer.l4{background:linear-gradient(100deg,#1f56e6,#4d8bff);border-color:transparent}
   .layer.l4 .lt,.layer.l4 .ld,.layer.l4 .ld b{color:#fff}
   .lchev{text-align:center;color:#9db4e6;font-size:.95rem;line-height:1;margin:-2px 0}
-  @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2{grid-template-columns:1fr}}
+  /* testimonial cases (P11) */
+  .tgrid{display:flex;gap:20px;margin-top:26px;align-items:stretch}
+  .tcard{position:relative;flex:1 1 0;min-width:0;background:#fff;border:1px solid rgba(20,50,120,.12);border-radius:18px;padding:22px 22px 0;box-shadow:0 10px 30px rgba(20,45,100,.07);display:flex;flex-direction:column;overflow:hidden}
+  .tcard .quote{position:absolute;right:16px;top:2px;font-size:3.6rem;font-weight:900;color:rgba(31,86,230,.1);font-family:Georgia,serif;line-height:1}
+  .tcard .tprod{color:#1f56e6;font-weight:800;font-size:.82rem}
+  .tcard .tclient{color:#14203a;font-weight:800;font-size:1.02rem;margin:5px 0 12px}
+  .tcard .tkpi{font-size:clamp(1.15rem,1.8vw,1.6rem);font-weight:900;line-height:1.22;background:linear-gradient(100deg,#1f56e6,#4d8bff);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
+  .tcard .tdesc{color:#5a6a86;font-size:.85rem;line-height:1.5;flex:1;padding-bottom:16px}
+  .tcard .tdesc b{color:#14203a}
+  .tcard .tfoot{margin:0 -22px;padding:11px 22px;background:linear-gradient(100deg,rgba(31,86,230,.08),rgba(77,139,255,.11));border-top:1px solid rgba(31,86,230,.14);display:flex;align-items:center;justify-content:space-between}
+  .tcard .stars{color:#f5a623;font-size:.95rem;letter-spacing:2px}
+  .tcard .tsat{color:#1f56e6;font-weight:700;font-size:.78rem}
+  @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2,.tgrid{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
     *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
@@ -324,32 +336,35 @@
 
   <!-- P10 · 客户效果展示 -->
   <section class="slide">
-    <div class="kick">客户效果展示 · 每个产品一个真实案例</div>
-    <h2>三大产品,各自跑出<span class="grad">看得见的结果</span></h2>
-    <div class="cards">
-      <div class="card">
-        <div class="t">产品一 · 权威品牌内容营销</div>
-        <div class="d">
-          <span class="case">案例:Gate · Bitget 等</span>
-          <span class="kpi">每周 40+ 长短文 · 10+ 高权重站点</span>
-          持续塑造华语市场影响力与品牌美誉度;经 FX168 / 富途证券 / 新浪财经等分发,助推其<b>美股代币化业务</b>的用户信任与圈内外关注,增强 B/C 端引用、降低信任成本,维护品牌 Google/AI 能见度。</div>
+    <div class="kick">客户成功案例 · 效果获认可</div>
+    <h2>三大产品,各自跑出<span class="grad">客户认可的成果</span></h2>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="quote">&ldquo;</div>
+        <div class="tprod">产品一 · 权威品牌内容营销</div>
+        <div class="tclient">Gate · Bitget 等</div>
+        <div class="tkpi">每周 40+ 长短文<br>10+ 高权重站点分发</div>
+        <div class="tdesc">持续塑造华语市场影响力与品牌美誉度;经 FX168 / 富途证券 / 新浪财经等分发,助推其<b>美股代币化业务</b>的用户信任与圈内外关注。</div>
+        <div class="tfoot"><span class="stars">★★★★★</span><span class="tsat">持续合作 · 效果获认可</span></div>
       </div>
-      <div class="card">
-        <div class="t">产品二 · 基于用户意图的创作</div>
-        <div class="d">
-          <span class="case">案例:某二线新锐交易所(3 月起介入)</span>
-          <span class="kpi">自然流量 18万 → 60万</span>
-          刷新该客户 <b>2 年历史峰值</b>;网站权重评分升至 <b>44 分</b>,明显优于同梯度竞对(约 33 分)。</div>
+      <div class="tcard">
+        <div class="quote">&ldquo;</div>
+        <div class="tprod">产品二 · 基于用户意图的创作</div>
+        <div class="tclient">某二线新锐交易所 · 3 月起介入</div>
+        <div class="tkpi">自然流量 18万 → 60万</div>
+        <div class="tdesc">刷新该客户 <b>2 年历史峰值</b>;网站权重评分升至 <b>44 分</b>,明显优于同梯度竞对(约 33 分)。</div>
+        <div class="tfoot"><span class="stars">★★★★★</span><span class="tsat">超预期 · 持续合作</span></div>
       </div>
-      <div class="card">
-        <div class="t">产品三 · 新闻页建站</div>
-        <div class="d">
-          <span class="case">案例:某新一代合规交易平台</span>
-          <span class="kpi">上线半月 · Google 收录 1000+ 页</span>
-          详情页 / 聚合页 / 搜索结果页 / 标签库全套;核心关键词 <b>80%+ 首页</b>;Semrush AI 能见度 <b>22</b>,相当于普通站点 3 个月才能达到。</div>
+      <div class="tcard">
+        <div class="quote">&ldquo;</div>
+        <div class="tprod">产品三 · 新闻页建站</div>
+        <div class="tclient">某新一代合规交易平台</div>
+        <div class="tkpi">上线半月<br>Google 收录 1000+ 页</div>
+        <div class="tdesc">详情页 / 聚合页 / 搜索结果页 / 标签库全套;核心关键词 <b>80%+ 首页</b>;Semrush AI 能见度 <b>22</b>,相当于普通站点 3 个月才能达到。</div>
+        <div class="tfoot"><span class="stars">★★★★★</span><span class="tsat">交付获认可</span></div>
       </div>
     </div>
-    <p class="small" style="margin-top:16px">* 案例数据来自实际合作;部分客户按保密要求匿名</p>
+    <p class="small" style="margin-top:14px">* 案例数据来自实际合作;部分客户按保密要求匿名;满意度评级为示意</p>
   </section>
 
   <!-- P11 · 度量 -->
