@@ -6,16 +6,16 @@
 <title>CatcherX · 数据驱动的 GEO/SEO 增长</title>
 <style>
   :root{
-    --bg:#070b16; --bg2:#0c1326; --ink:#eaf0ff; --mut:#8a97b8;
-    --cy:#22d3ee; --vi:#8b5cf6; --line:rgba(255,255,255,.08);
-    --card:rgba(255,255,255,.035);
+    --bg:#ffffff; --ink:#14203a; --mut:#5a6a86;
+    --blue:#1f56e6; --blue2:#4d8bff; --line:rgba(20,40,80,.10);
+    --card:#f5f8fd; --cardbd:rgba(20,50,120,.12);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%}
   body{
     font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
-    background:radial-gradient(1200px 800px at 70% -10%,rgba(139,92,246,.18),transparent),
-               radial-gradient(1000px 700px at -10% 110%,rgba(34,211,238,.14),transparent),
+    background:radial-gradient(1100px 700px at 82% -12%,rgba(31,86,230,.07),transparent),
+               radial-gradient(900px 600px at -10% 112%,rgba(77,139,255,.06),transparent),
                var(--bg);
     color:var(--ink); overflow:hidden;
   }
@@ -26,81 +26,85 @@
     transition:opacity .5s ease,transform .5s ease;pointer-events:none;
   }
   .slide.active{opacity:1;transform:none;pointer-events:auto}
-  .kick{color:var(--cy);font-weight:700;letter-spacing:.18em;font-size:.78rem;text-transform:uppercase;margin-bottom:18px}
-  h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;font-weight:800;letter-spacing:-.02em}
-  h2{font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.15;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
+  .kick{color:var(--blue);font-weight:700;letter-spacing:.18em;font-size:.78rem;text-transform:uppercase;margin-bottom:18px}
+  h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  h2{font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.15;font-weight:800;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink)}
   .sub{font-size:clamp(1rem,1.7vw,1.35rem);color:var(--mut);margin-top:18px;max-width:64ch;line-height:1.6}
-  .sub b{color:#fff}
-  .grad{background:linear-gradient(100deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub b{color:var(--ink)}
+  .grad{background:linear-gradient(100deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
   ul{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:16px;max-width:72ch}
-  li{position:relative;padding-left:30px;font-size:clamp(1rem,1.55vw,1.25rem);line-height:1.5;color:#d6def5}
+  li{position:relative;padding-left:30px;font-size:clamp(1rem,1.55vw,1.25rem);line-height:1.5;color:#2a3854}
   li::before{content:"";position:absolute;left:0;top:.55em;width:11px;height:11px;border-radius:3px;
-    background:linear-gradient(135deg,var(--cy),var(--vi))}
-  li b{color:#fff}
+    background:linear-gradient(135deg,var(--blue),var(--blue2))}
+  li b{color:var(--ink)}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
-  .card .t{font-weight:700;font-size:1.05rem;margin-bottom:8px}
-  .card .badge{color:var(--cy);font-size:.68rem;border:1px solid rgba(34,211,238,.35);border-radius:99px;padding:2px 8px;margin-left:6px;font-weight:700;vertical-align:middle}
+  .card{background:var(--card);border:1px solid var(--cardbd);border-radius:16px;padding:22px 20px;box-shadow:0 4px 16px rgba(20,45,100,.05)}
+  .card .t{font-weight:700;font-size:1.05rem;margin-bottom:8px;color:var(--ink)}
+  .card .badge{color:var(--blue);font-size:.68rem;border:1px solid rgba(31,86,230,.4);border-radius:99px;padding:2px 8px;margin-left:6px;font-weight:700;vertical-align:middle}
   .card .d{color:var(--mut);font-size:.9rem;line-height:1.55}
-  .card .d b{color:#dbe4fb}
-  .card .kpi{display:block;font-size:clamp(1.15rem,1.7vw,1.55rem);font-weight:800;margin:8px 0 6px;background:linear-gradient(100deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}
-  .card .case{display:block;color:#dbe4fb;font-size:.82rem;font-weight:700;margin-bottom:2px}
+  .card .d b{color:var(--blue)}
+  .card .kpi{display:block;font-size:clamp(1.15rem,1.7vw,1.55rem);font-weight:800;margin:8px 0 6px;background:linear-gradient(100deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}
+  .card .case{display:block;color:#34426b;font-size:.82rem;font-weight:700;margin-bottom:2px}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center}
-  .stat .big{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:900;line-height:1;background:linear-gradient(120deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat{background:var(--card);border:1px solid var(--cardbd);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 4px 16px rgba(20,45,100,.05)}
+  .stat .big{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:900;line-height:1;background:linear-gradient(120deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
   .stat .cap{color:var(--mut);font-size:.9rem;margin-top:10px;line-height:1.4}
-  .stat .cap b{color:#dbe4fb}
+  .stat .cap b{color:var(--ink)}
+  .stats.compact{gap:12px}
+  .stats.compact .stat{padding:16px 10px}
+  .stats.compact .big{font-size:clamp(1.15rem,2.2vw,1.8rem)}
+  .stats.compact .cap{font-size:.78rem;margin-top:6px}
   .proofbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-  .chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:9px 16px;font-size:.98rem;color:#cdd6f0;font-weight:600}
-  .chip b{color:#fff}
+  .chip{background:#fff;border:1px solid var(--cardbd);border-radius:99px;padding:9px 16px;font-size:.98rem;color:#2a3854;font-weight:600;box-shadow:0 2px 8px rgba(20,45,100,.04)}
+  .chip b{color:var(--ink)}
   .bars{display:flex;flex-direction:column;gap:22px;margin-top:26px;max-width:60ch}
-  .bar .lab{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:8px;color:#cdd6f0}
-  .track{height:14px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
-  .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cy),var(--vi))}
-  .ai{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;font-size:1.05rem;line-height:1.7;color:#cdd6f0}
-  .ai .q{color:var(--cy);font-weight:700;margin-bottom:12px}
-  .miss{color:#ff6b6b;border:1px dashed rgba(255,107,107,.5);border-radius:8px;padding:2px 8px;font-size:.9rem}
+  .bar .lab{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:8px;color:#2a3854}
+  .track{height:14px;border-radius:99px;background:rgba(20,40,80,.08);overflow:hidden}
+  .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--blue2))}
+  .ai{background:var(--card);border:1px solid var(--cardbd);border-radius:18px;padding:26px;font-size:1.05rem;line-height:1.7;color:#2a3854;box-shadow:0 4px 16px rgba(20,45,100,.05)}
+  .ai .q{color:var(--blue);font-weight:700;margin-bottom:12px}
+  .miss{color:#e5484d;border:1px dashed rgba(229,72,77,.5);border-radius:8px;padding:2px 8px;font-size:.9rem}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
   .steps.four{grid-template-columns:repeat(4,1fr);gap:14px}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;position:relative}
+  .step{background:var(--card);border:1px solid var(--cardbd);border-radius:16px;padding:24px 20px;position:relative;box-shadow:0 4px 16px rgba(20,45,100,.05)}
   .steps.four .step{padding:20px 16px}
-  .step .n{font-size:2rem;font-weight:800;color:transparent;background:linear-gradient(135deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text}
-  .step .st{font-weight:700;margin:8px 0 6px;font-size:1.1rem}
+  .step .n{font-size:2rem;font-weight:800;color:transparent;background:linear-gradient(135deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text}
+  .step .st{font-weight:700;margin:8px 0 6px;font-size:1.1rem;color:var(--ink)}
   .steps.four .st{font-size:1rem}
   .step .sd{color:var(--mut);font-size:.92rem;line-height:1.45}
   .steps.four .sd{font-size:.86rem}
-  .cta{margin-top:22px;display:inline-flex;align-items:center;gap:12px;background:linear-gradient(100deg,var(--cy),var(--vi));
-    color:#06101f;font-weight:800;padding:16px 30px;border-radius:99px;font-size:1.1rem}
+  .cta{margin-top:22px;display:inline-flex;align-items:center;gap:12px;background:linear-gradient(100deg,var(--blue),var(--blue2));
+    color:#fff;font-weight:800;padding:16px 30px;border-radius:99px;font-size:1.1rem;box-shadow:0 8px 24px rgba(31,86,230,.28)}
   .brand{position:fixed;left:9vw;bottom:4vh;font-weight:800;letter-spacing:.02em;color:var(--mut);font-size:.85rem;z-index:5}
-  .brand b{color:#fff}
+  .brand b{color:var(--blue)}
   .counter{position:fixed;right:9vw;bottom:4vh;color:var(--mut);font-size:.85rem;z-index:5}
   .dots{position:fixed;left:50%;transform:translateX(-50%);bottom:3.4vh;display:flex;gap:9px;z-index:5;max-width:80vw;flex-wrap:wrap;justify-content:center}
-  .dot{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.18);cursor:pointer;transition:.25s}
-  .dot.on{background:linear-gradient(135deg,var(--cy),var(--vi));width:26px}
-  .logo{font-size:clamp(3rem,9vw,7rem);font-weight:900;letter-spacing:-.03em}
-  .logo .x{background:linear-gradient(120deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .dot{width:8px;height:8px;border-radius:99px;background:rgba(20,40,80,.16);cursor:pointer;transition:.25s}
+  .dot.on{background:linear-gradient(135deg,var(--blue),var(--blue2));width:26px}
+  .logo{font-size:clamp(3rem,9vw,7rem);font-weight:900;letter-spacing:-.03em;color:var(--ink)}
+  .logo .x{background:linear-gradient(120deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
   .hint{position:fixed;right:9vw;top:4vh;color:var(--mut);font-size:.75rem;z-index:5;opacity:.6}
   .small{color:var(--mut);font-size:.9rem}
-  .slogan{font-size:clamp(1.3rem,2.5vw,2rem);font-weight:800;color:#fff;margin-top:22px;padding-left:16px;border-left:4px solid var(--cy);max-width:40ch;line-height:1.3}
+  .slogan{font-size:clamp(1.3rem,2.5vw,2rem);font-weight:800;color:var(--ink);margin-top:22px;padding-left:16px;border-left:4px solid var(--blue);max-width:40ch;line-height:1.3}
   .logos{display:flex;flex-wrap:wrap;gap:13px;margin:24px 0 4px}
-  .lg{display:inline-flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 17px;font-weight:700;font-size:1.02rem;color:#dbe4fb}
-  .lg::before{content:"";width:13px;height:13px;border-radius:50%;background:var(--dot,linear-gradient(135deg,var(--cy),var(--vi)))}
-  .callout{margin-top:24px;background:linear-gradient(100deg,rgba(34,211,238,.13),rgba(139,92,246,.13));border:1px solid rgba(139,92,246,.45);border-radius:16px;padding:20px 26px;font-size:clamp(1.1rem,1.9vw,1.5rem);font-weight:700;color:#fff;display:inline-block}
+  .lg{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--cardbd);border-radius:12px;padding:10px 17px;font-weight:700;font-size:1.02rem;color:#2a3854;box-shadow:0 2px 8px rgba(20,45,100,.04)}
+  .lg::before{content:"";width:13px;height:13px;border-radius:50%;background:var(--dot,linear-gradient(135deg,var(--blue),var(--blue2)))}
+  .callout{margin-top:24px;background:linear-gradient(100deg,rgba(31,86,230,.08),rgba(77,139,255,.10));border:1px solid rgba(31,86,230,.30);border-radius:16px;padding:20px 26px;font-size:clamp(1.1rem,1.9vw,1.5rem);font-weight:700;color:var(--ink);display:inline-block}
   .deliver{display:flex;flex-direction:column;gap:14px;margin-top:20px}
-  .pkg{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 24px}
-  .pkg h3{font-size:1.2rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:9px}
-  .pkg h3::before{content:"";width:9px;height:22px;border-radius:3px;background:linear-gradient(135deg,var(--cy),var(--vi))}
+  .pkg{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;background:var(--card);border:1px solid var(--cardbd);border-radius:16px;padding:18px 24px;box-shadow:0 4px 16px rgba(20,45,100,.05)}
+  .pkg h3{font-size:1.2rem;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:9px}
+  .pkg h3::before{content:"";width:9px;height:22px;border-radius:3px;background:linear-gradient(135deg,var(--blue),var(--blue2))}
   .pkg .metrics{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
-  .pkg .metrics span{font-size:.72rem;color:var(--cy);border:1px solid rgba(34,211,238,.3);border-radius:8px;padding:4px 7px}
+  .pkg .metrics span{font-size:.72rem;color:var(--blue);border:1px solid rgba(31,86,230,.3);border-radius:8px;padding:4px 7px}
   .pkg ul{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
-  .pkg li{font-size:.86rem;padding-left:17px;line-height:1.35;color:#cdd6f0}
+  .pkg li{font-size:.86rem;padding-left:17px;line-height:1.35;color:#2a3854}
   .pkg li::before{width:7px;height:7px;top:.42em}
-  .pkg li b{color:var(--cy)}
+  .pkg li b{color:var(--blue)}
   .cols2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px;align-items:start}
   .qrwrap{display:flex;align-items:center;gap:26px;margin-top:22px}
-  .qrtext .cta-lite{font-weight:800;font-size:clamp(1.4rem,2.4vw,1.9rem);background:linear-gradient(100deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
-  .qrtext .note{color:#cdd6f0;font-size:1.15rem}
+  .qrtext .cta-lite{font-weight:800;font-size:clamp(1.4rem,2.4vw,1.9rem);background:linear-gradient(100deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+  .qrtext .note{color:#2a3854;font-size:1.15rem}
   @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
@@ -111,8 +115,8 @@
     .slide{
       position:relative;inset:auto;width:1280px;height:716px;overflow:hidden;
       opacity:1!important;transform:none!important;
-      background:radial-gradient(1200px 800px at 70% -10%,rgba(139,92,246,.18),transparent),
-                 radial-gradient(1000px 700px at -10% 110%,rgba(34,211,238,.14),transparent),
+      background:radial-gradient(1100px 700px at 82% -12%,rgba(31,86,230,.07),transparent),
+                 radial-gradient(900px 600px at -10% 112%,rgba(77,139,255,.06),transparent),
                  var(--bg);
     }
     .slide + .slide{page-break-before:always;break-before:page}
@@ -196,7 +200,24 @@
     <p class="sub"><b>执行会被 AI 商品化,数据资产不会。</b>这就是数据驱动的 GEO/SEO——对手抄不走的护城河。</p>
   </section>
 
-  <!-- P6 · 实证 -->
+  <!-- P6 · RootData 数据源头 -->
+  <section class="slide">
+    <div class="kick">数据源头 · RootData</div>
+    <h2>我们的源头,是<span class="grad">权威、可信的 RootData</span></h2>
+    <p class="sub" style="margin-top:8px;max-width:82ch">RootData 是领先的 Web3 企业数据平台,为全球投资者、研究员与从业者提供全面、准确、实时的加密行业数据,提升交易决策质量、降低商业互信成本。</p>
+    <div class="stats compact" style="grid-template-columns:repeat(6,1fr)">
+      <div class="stat"><div class="big">420万+</div><div class="cap">月均搜索请求</div></div>
+      <div class="stat"><div class="big">350万+</div><div class="cap">注册用户</div></div>
+      <div class="stat"><div class="big">19,000+</div><div class="cap">收录项目</div></div>
+      <div class="stat"><div class="big">220+</div><div class="cap">API 接入平台</div></div>
+      <div class="stat"><div class="big">14M+</div><div class="cap">月均 PV</div></div>
+      <div class="stat"><div class="big">2500万+</div><div class="cap">全球可触达用户</div></div>
+    </div>
+    <div class="callout" style="font-size:clamp(.95rem,1.5vw,1.2rem);margin-top:20px">🏛 <b>权威可信</b>:被 华尔街日报 / CoinTelegraph / Binance Research / The Block 引用 · 获 NLVC 北极光创投、博雅互动(00434.hk) 投资 · 与 Binance / OKX / CertiK / Ethereum Foundation 等战略合作</div>
+    <p class="small" style="margin-top:14px">核心用户 = 机构研究员 / VC 分析师 / 项目方创始人——<b style="color:var(--blue)">真正影响投资与上币决策的人</b>。220+ 平台 API 接入,RootData 已是行业事实上的数据基础设施——我们的内容,就建在这个源头之上。</p>
+  </section>
+
+  <!-- P7 · 实证 -->
   <section class="slide">
     <div class="kick">为什么是我们 · GEO 实证</div>
     <h2>我们不是"开始做 GEO"——ChainCatcher <span class="grad">已经是 AI 与搜索的权威信息源</span></h2>
@@ -211,7 +232,7 @@
       <span class="chip"><b>6万+</b> 原创内容</span>
       <span class="chip"><b>1200万+</b> 月均 PV</span>
     </div>
-    <p class="small" style="margin-top:20px">头部交易所合作案例:单项目触达用户 <b style="color:#fff">30万+</b> · 平台宣传 PV <b style="color:#fff">50万+</b></p>
+    <p class="small" style="margin-top:20px">头部交易所合作案例:单项目触达用户 <b style="color:var(--blue)">30万+</b> · 平台宣传 PV <b style="color:var(--blue)">50万+</b></p>
   </section>
 
   <!-- P7 · 客户结果 -->
