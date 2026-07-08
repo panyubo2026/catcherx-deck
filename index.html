@@ -105,6 +105,32 @@
   .qrwrap{display:flex;align-items:center;gap:26px;margin-top:22px}
   .qrtext .cta-lite{font-weight:800;font-size:clamp(1.4rem,2.4vw,1.9rem);background:linear-gradient(100deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
   .qrtext .note{color:#2a3854;font-size:1.15rem}
+  /* flywheel (P9) */
+  .fly{position:relative;width:900px;height:460px;margin:14px auto 0}
+  .fly svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .fly-hub{position:absolute;left:450px;top:215px;transform:translate(-50%,-50%);width:172px;height:172px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#eaf1ff,#f5f8fd);border:2px solid rgba(31,86,230,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 10px 30px rgba(31,86,230,.14);z-index:3}
+  .fly-hub .a{font-weight:900;font-size:1.15rem;line-height:1.15;background:linear-gradient(100deg,#1f56e6,#4d8bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .fly-hub .b{font-size:.76rem;color:#5a6a86;margin-top:5px;line-height:1.3}
+  .fly-node{position:absolute;width:256px;background:#fff;border:1px solid rgba(20,50,120,.12);border-radius:14px;padding:13px 16px;box-shadow:0 8px 22px rgba(20,45,100,.09);z-index:2}
+  .fly-node.core{border:1.6px solid rgba(31,86,230,.6);background:linear-gradient(180deg,#f3f7ff,#ffffff)}
+  .fly-node .nt{font-weight:800;font-size:.96rem;color:#14203a;margin-bottom:5px}
+  .fly-node .nd{font-size:.79rem;color:#5a6a86;line-height:1.42}
+  .fly-node .nd b{color:#1f56e6}
+  .n-top{left:322px;top:0}
+  .n-bl{left:8px;top:352px}
+  .n-br{right:8px;top:352px}
+  /* layers (P10) */
+  .layers{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+  .layer{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center;border-radius:12px;padding:13px 22px;border:1px solid rgba(31,86,230,.14)}
+  .layer .lt{font-weight:800;font-size:1.02rem}
+  .layer .ld{font-size:.92rem;line-height:1.4}
+  .layer .ld b{color:#0d1b2e;font-weight:800}
+  .layer.l1{background:#f5f8fd}.layer.l1 .lt{color:#1f56e6}
+  .layer.l2{background:#eaf1ff}.layer.l2 .lt{color:#1f56e6}
+  .layer.l3{background:linear-gradient(90deg,#dbe7ff,#eef4ff)}.layer.l3 .lt{color:#1f56e6}
+  .layer.l4{background:linear-gradient(100deg,#1f56e6,#4d8bff);border-color:transparent}
+  .layer.l4 .lt,.layer.l4 .ld,.layer.l4 .ld b{color:#fff}
+  .lchev{text-align:center;color:#9db4e6;font-size:.95rem;line-height:1;margin:-2px 0}
   @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
@@ -251,38 +277,49 @@
   <!-- P8 · 三大产品服务 -->
   <section class="slide">
     <div class="kick">我们具体提供什么 · 三大产品服务</div>
-    <h2>三大产品,组成一套<span class="grad">数据驱动的 GEO/SEO</span></h2>
-    <div class="cards">
-      <div class="card">
-        <div class="t">产品一 · 品牌营销</div>
-        <div class="d">
-          <b>ChainCatcher 媒体服务包</b>:渠道分发(垂直+传统,阅读 1万+)、全球传播、社群 KOL、舆情监控、媒体背书<br><br>
-          + RootData <b>独立研报</b>:数据核实评分后纳入行业研报,机构级引用背书,被 220+ 平台 API 引用<br><br>
-          + <b>交易所排名优化</b>(独立客观,非买榜)
-        </div>
+    <h2>GEO/SEO 服务的<span class="grad">三板斧</span></h2>
+    <div class="fly">
+      <svg viewBox="0 0 900 460">
+        <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f56e6"/><stop offset="1" stop-color="#4d8bff"/></linearGradient></defs>
+        <line x1="554" y1="275" x2="648" y2="350" stroke="#c9d8f5" stroke-width="2"/>
+        <line x1="346" y1="275" x2="252" y2="350" stroke="#c9d8f5" stroke-width="2"/>
+        <circle cx="450" cy="215" r="120" fill="none" stroke="url(#fg)" stroke-width="3" stroke-dasharray="5 9" opacity=".7"/>
+        <g fill="#1f56e6">
+          <path d="M -7,-7 L 8,0 L -7,7 Z" transform="translate(450,95) rotate(20)"/>
+          <path d="M -7,-7 L 8,0 L -7,7 Z" transform="translate(554,275) rotate(140)"/>
+          <path d="M -7,-7 L 8,0 L -7,7 Z" transform="translate(346,275) rotate(260)"/>
+        </g>
+      </svg>
+      <div class="fly-hub"><div class="a">GEO/SEO<br>增长飞轮</div><div class="b">三者相互放大<br>越转越快</div></div>
+      <div class="fly-node core n-top">
+        <div class="nt">产品二 · 数据驱动内容<span class="badge">核心引擎</span></div>
+        <div class="nd">基于 <b>Crypto 最大项目数据库</b>,产出稀缺、原创、可被 AI 引用的内容</div>
       </div>
-      <div class="card">
-        <div class="t">产品二 · 数据驱动内容(基于用户意图)<span class="badge">核心</span></div>
-        <div class="d">基于 RootData 最大加密币种与项目数据库,产出<b>高质量、稀缺</b>的原创内容——别人引用不到的弹药。<br><br>这是差异化所在,详见下页。</div>
+      <div class="fly-node n-bl">
+        <div class="nt">产品一 · 品牌营销</div>
+        <div class="nd">ChainCatcher 媒体包 + RootData <b>独立研报</b> + 交易所排名优化(独立客观)。研报被 <b>WSJ、CoinTelegraph、X 活跃 KOL</b> 及 220+ 平台 API 引用</div>
       </div>
-      <div class="card">
-        <div class="t">产品三 · 新闻页建站</div>
-        <div class="d">基于 ChainCatcher 领先建站经验,<b>高性价比</b>搭建新闻内容落地页,最大化满足用户与 <b>Google / AI 爬虫</b>的 UI/UX 体验。</div>
+      <div class="fly-node n-br">
+        <div class="nt">产品三 · 新闻页建站</div>
+        <div class="nd">高性价比新闻落地页,<b>适配 Google / AI 与用户</b>,承接并转化流量</div>
       </div>
     </div>
-    <p class="sub">产品二是<b>核心与差异化</b>;产品一、三围绕它放大效果、承接流量。</p>
   </section>
 
   <!-- P9 · 产品二详解 -->
   <section class="slide">
-    <div class="kick">产品二详解 · 数据驱动内容</div>
-    <h2>把 RootData 数据库,变成<span class="grad">高质量、稀缺的内容</span></h2>
-    <div class="cards">
-      <div class="card"><div class="t">a · 真实行为驱动</div><div class="d">基于 RootData、ChainCatcher <b>实时用户真实行为</b>——搜索、收藏、转发,锁定用户真正在意的项目/币种</div></div>
-      <div class="card"><div class="t">b · 15+ 数据维度</div><div class="d">单个项目<b>超 15 项独特数据维度</b>,结合高价值与被错配的词条/提示词,匹配交易平台币种交易情况,高效批量产出长短内容</div></div>
-      <div class="card"><div class="t">c · 10+ 语言本地化</div><div class="d">专业机构级<b>多语言编译适配</b>,同时覆盖 10+ 种语言本地化,最大化客户全球 GEO/SEO 效果</div></div>
+    <div class="kick">我们的核心竞争力</div>
+    <h2 style="font-size:clamp(1.35rem,2.9vw,2.15rem)">基于 <span class="grad">Crypto 最大项目数据库</span>,紧扣新闻、搜索查询等高频的<span class="grad">用户真实意图</span>,产出适配于客户的<span class="grad">有效内容</span></h2>
+    <div class="layers">
+      <div class="layer l1"><div class="lt">① 数据底座</div><div class="ld">Crypto <b>最大项目数据库</b>:独家、权威、实时更新——别人拿不到的原料</div></div>
+      <div class="lchev">↓</div>
+      <div class="layer l2"><div class="lt">② 真实意图</div><div class="ld">紧扣<b>新闻、搜索查询</b>等高频真实用户意图(实时搜索 / 收藏 / 转发行为)</div></div>
+      <div class="lchev">↓</div>
+      <div class="layer l3"><div class="lt">③ 内容加工</div><div class="ld">单项目 <b>15+ 数据维度</b> × 高价值 / 被错配词条 × ChainCatcher <b>8 年</b>内容经验</div></div>
+      <div class="lchev">↓</div>
+      <div class="layer l4"><div class="lt">④ 有效产出</div><div class="ld">产出<b>适配客户的有效内容</b> · 10+ 语言本地化 · 长短兼备、可被 AI / Google 引用</div></div>
     </div>
-    <p class="sub">这是市面上 GEO/SEO 服务商<b>做不到</b>的一层:原料(独家数据)+ 加工(8 年经验)+ 全球化(多语),我们全部自有。</p>
+    <p class="sub" style="margin-top:16px">原料(独家数据)+ 加工(8 年经验)+ 全球化(多语)——市面上 GEO/SEO 服务商<b>做不到</b>的一层,我们全部自有。</p>
   </section>
 
   <!-- P10 · 客户效果展示 -->
