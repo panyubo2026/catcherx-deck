@@ -143,6 +143,27 @@
   .tcard .tfoot{margin:0 -22px;padding:11px 22px;background:linear-gradient(100deg,rgba(31,86,230,.08),rgba(77,139,255,.11));border-top:1px solid rgba(31,86,230,.14);display:flex;align-items:center;justify-content:space-between}
   .tcard .stars{color:#f5a623;font-size:.95rem;letter-spacing:2px}
   .tcard .tsat{color:#1f56e6;font-weight:700;font-size:.78rem}
+  /* de-emphasized supporting (P9) */
+  .deprio{margin-top:18px;background:#f4f6fa;border:1px dashed rgba(20,50,120,.20);border-radius:12px;padding:13px 20px;color:#5a6a86;font-size:.92rem;line-height:1.55}
+  .deprio b{color:#34426b}
+  .pillhead{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.12rem;color:#14203a;margin-bottom:10px}
+  .pillhead .badge{font-size:.7rem}
+  /* product tiers (P9) */
+  .tiers{display:flex;gap:18px;margin-top:22px;align-items:stretch}
+  .tier{flex:1 1 0;min-width:0;background:#fff;border:1px solid rgba(20,50,120,.12);border-radius:16px;box-shadow:0 8px 24px rgba(20,45,100,.06);display:flex;flex-direction:column;overflow:hidden}
+  .tier.hot{border:1.6px solid rgba(31,86,230,.55)}
+  .tier .th{padding:15px 18px 12px;border-bottom:1px solid rgba(20,50,120,.08)}
+  .tier .th .lv{font-size:.72rem;font-weight:700;color:#1f56e6;letter-spacing:.04em}
+  .tier .th .nm{font-size:1.1rem;font-weight:800;color:#14203a;margin-top:3px}
+  .tier.hot .th{background:linear-gradient(100deg,#1f56e6,#4d8bff)}
+  .tier.hot .th .lv,.tier.hot .th .nm{color:#fff}
+  .tier .body{padding:13px 18px;font-size:.82rem;color:#5a6a86;line-height:1.45;flex:1}
+  .tier .body b{color:#14203a}
+  .tier .body .li{position:relative;padding-left:15px;margin:7px 0}
+  .tier .body .li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:2px;background:linear-gradient(135deg,#1f56e6,#4d8bff)}
+  .tier .goal{margin:0 18px 12px;padding:9px 12px;background:linear-gradient(100deg,rgba(31,86,230,.08),rgba(77,139,255,.1));border-radius:9px;font-size:.8rem;color:#1f56e6;font-weight:700;line-height:1.4}
+  .tier .fit{padding:11px 18px;border-top:1px dashed rgba(20,50,120,.16);font-size:.78rem;color:#5a6a86}
+  .tier .fit b{color:#34426b}
   @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2,.tgrid{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
@@ -288,34 +309,23 @@
 
   <!-- P8 · 三大产品服务 -->
   <section class="slide">
-    <div class="kick">我们具体提供什么 · 三大产品服务</div>
-    <h2>GEO/SEO 服务的<span class="grad">三板斧</span></h2>
-    <div class="fly">
-      <svg viewBox="0 0 900 460">
-        <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f56e6"/><stop offset="1" stop-color="#4d8bff"/></linearGradient></defs>
-        <line x1="554" y1="275" x2="648" y2="350" stroke="#c9d8f5" stroke-width="2"/>
-        <line x1="346" y1="275" x2="252" y2="350" stroke="#c9d8f5" stroke-width="2"/>
-        <circle cx="450" cy="215" r="120" fill="none" stroke="url(#fg)" stroke-width="3" stroke-dasharray="5 9" opacity=".7"/>
-        <g fill="#1f56e6">
-          <path d="M -7,-7 L 8,0 L -7,7 Z" transform="translate(450,95) rotate(20)"/>
-          <path d="M -7,-7 L 8,0 L -7,7 Z" transform="translate(554,275) rotate(140)"/>
-          <path d="M -7,-7 L 8,0 L -7,7 Z" transform="translate(346,275) rotate(260)"/>
-        </g>
-      </svg>
-      <div class="fly-hub"><div class="a">GEO/SEO<br>增长飞轮</div><div class="b">三者相互放大<br>越转越快</div></div>
-      <div class="fly-node core n-top">
-        <div class="nt">产品二 · 数据驱动内容<span class="badge">核心引擎</span></div>
-        <div class="nd">基于 <b>Crypto 最大项目数据库</b>,产出稀缺、原创、可被 AI 引用的内容</div>
+    <div class="kick">核心产品 · 内容</div>
+    <h2>我们的核心产品,就是<span class="grad">「内容」</span></h2>
+    <p class="sub" style="margin-top:6px;max-width:80ch">这正是 CatcherX <b>有别于其他 GEO/SEO 服务商</b>的根本。核心产品拆开,就是两件:</p>
+    <div class="cols2" style="margin-top:18px">
+      <div class="card">
+        <div class="pillhead">① 内容 API<span class="badge">核心</span></div>
+        <div class="d">把数据与内容能力<b>产品化</b>,直接接入客户系统。<br><br>
+        · <b>标准版 $6,000/年</b>:进阶接口、信源定制、文章/快讯(近 3 天)、5 分钟延迟<br>
+        · <b>企业定制版</b>:0 延迟实时同步、多语言与定制数据源、AI 内容摘要/解析、专属标签体系、7×24 1v1 支持</div>
       </div>
-      <div class="fly-node n-bl">
-        <div class="nt">产品一 · 品牌营销</div>
-        <div class="nd">ChainCatcher 媒体包 + RootData <b>独立研报</b> + 交易所排名优化(独立客观)。研报被 <b>WSJ、CoinTelegraph、X 活跃 KOL</b> 及 220+ 平台 API 引用</div>
-      </div>
-      <div class="fly-node n-br">
-        <div class="nt">产品三 · 新闻页建站</div>
-        <div class="nd">高性价比新闻落地页,<b>适配 Google / AI 与用户</b>,承接并转化流量</div>
+      <div class="card">
+        <div class="pillhead">② 基于用户意图的有效内容<span class="badge">核心</span></div>
+        <div class="d">围绕<b>产品 / 场景 / 问题 / 对比词</b>建立覆盖;品牌知识库引用,减少泛泛 AI 内容;内链 / 外链 + Schema 结构化;标题 / 摘要 / FAQ / CTA 转化路径设计。<br><br>
+        · <b>月产 10 篇 · 2000–3000 字/篇</b>(可定制月交付 50 篇)</div>
       </div>
     </div>
+    <div class="deprio">配套(非主推):<b>渠道分发</b> —— GEO/SEO 初期需要投一下,但只是小阶段、市场供给充足;<b>新闻页建站</b> —— 可合作,但客户决策链路较长。</div>
   </section>
 
   <!-- P9 · 产品二详解 -->
@@ -365,6 +375,42 @@
       </div>
     </div>
     <p class="small" style="margin-top:14px">* 案例数据来自实际合作;部分客户按保密要求匿名;满意度评级为示意</p>
+  </section>
+
+  <!-- 产品服务类型 -->
+  <section class="slide">
+    <div class="kick">产品服务类型 · 由轻到重</div>
+    <h2>三类产品服务,匹配不同阶段的<span class="grad">客户需求</span></h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="th"><div class="lv">第一类 · 入门</div><div class="nm">内容 · 内容托管</div></div>
+        <div class="body">
+          <div class="li">常规付费 <b>API $6,000/年</b>(标准信源接口)</div>
+          <div class="li"><b>定制化 API</b>:依托领先 Crypto 项目与新闻平台,实时捕捉用户意图,结合客户平台资产清单定制</div>
+        </div>
+        <div class="goal">🎯 围绕 Google 收录 + 搜索结果排序 + AI 能见度(得分)优化</div>
+        <div class="fit"><b>适配</b>:已有新闻页、想早期尝试的客户</div>
+      </div>
+      <div class="tier">
+        <div class="th"><div class="lv">第二类 · 进阶</div><div class="nm">文章撰写</div></div>
+        <div class="body">
+          <div class="li">提供详细 <b>GEO/SEO 诊断报告</b></div>
+          <div class="li">结合真实搜索、新闻浏览等<b>行为数据库</b>,实时捕捉用户意图</div>
+          <div class="li">给出具体<b>关键词 / 提示词优化</b>,输出文章</div>
+        </div>
+        <div class="goal">🎯 达成基础 GEO/SEO 效果,构建核心品牌关键词/提示词,精准匹配自然搜索</div>
+        <div class="fit"><b>适配</b>:对关键词 / 提示词优化有明确需求的客户</div>
+      </div>
+      <div class="tier hot">
+        <div class="th"><div class="lv">第三类 · 重度</div><div class="nm">重度 GEO/SEO 服务</div></div>
+        <div class="body">
+          <div class="li">全链路:<b>新闻页搭建 → 定制化 API → 网站权重提升 → 定制化交易决策信息</b></div>
+          <div class="li">打通<b>外部流量捕获</b>与<b>站内交易活跃</b></div>
+        </div>
+        <div class="goal">🎯 从捕获外部流量,到提升站内用户的交易活跃度</div>
+        <div class="fit"><b>适配</b>:需系统化打通"信息量 + 交易流"的客户</div>
+      </div>
+    </div>
   </section>
 
   <!-- P11 · 度量 -->
