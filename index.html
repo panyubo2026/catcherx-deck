@@ -37,8 +37,10 @@
   li::before{content:"";position:absolute;left:0;top:.55em;width:11px;height:11px;border-radius:3px;
     background:linear-gradient(135deg,var(--blue),var(--blue2))}
   li b{color:var(--ink)}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .two{display:flex;gap:40px;align-items:center}
+  .two>*{flex:1 1 0;min-width:0}
+  .cards{display:flex;gap:18px;margin-top:30px;align-items:stretch}
+  .cards>*{flex:1 1 0;min-width:0}
   .card{background:var(--card);border:1px solid var(--cardbd);border-radius:16px;padding:22px 20px;box-shadow:0 4px 16px rgba(20,45,100,.05)}
   .card .t{font-weight:700;font-size:1.05rem;margin-bottom:8px;color:var(--ink)}
   .card .badge{color:var(--blue);font-size:.68rem;border:1px solid rgba(31,86,230,.4);border-radius:99px;padding:2px 8px;margin-left:6px;font-weight:700;vertical-align:middle}
@@ -65,8 +67,9 @@
   .ai{background:var(--card);border:1px solid var(--cardbd);border-radius:18px;padding:26px;font-size:1.05rem;line-height:1.7;color:#2a3854;box-shadow:0 4px 16px rgba(20,45,100,.05)}
   .ai .q{color:var(--blue);font-weight:700;margin-bottom:12px}
   .miss{color:#e5484d;border:1px dashed rgba(229,72,77,.5);border-radius:8px;padding:2px 8px;font-size:.9rem}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
-  .steps.four{grid-template-columns:repeat(4,1fr);gap:14px}
+  .steps{display:flex;gap:18px;margin-top:24px;align-items:stretch}
+  .steps>*{flex:1 1 0;min-width:0}
+  .steps.four{gap:14px}
   .step{background:var(--card);border:1px solid var(--cardbd);border-radius:16px;padding:24px 20px;position:relative;box-shadow:0 4px 16px rgba(20,45,100,.05)}
   .steps.four .step{padding:20px 16px}
   .step .n{font-size:2rem;font-weight:800;color:transparent;background:linear-gradient(135deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text}
@@ -164,6 +167,38 @@
   .tier .goal{margin:0 18px 12px;padding:9px 12px;background:linear-gradient(100deg,rgba(31,86,230,.08),rgba(77,139,255,.1));border-radius:9px;font-size:.8rem;color:#1f56e6;font-weight:700;line-height:1.4}
   .tier .fit{padding:11px 18px;border-top:1px dashed rgba(20,50,120,.16);font-size:.78rem;color:#5a6a86}
   .tier .fit b{color:#34426b}
+  /* pricing (套餐) */
+  .pgrid{display:flex;gap:16px;margin-top:20px;align-items:stretch}
+  .pcard{flex:1 1 0;min-width:0;background:#fff;border:1px solid rgba(20,50,120,.12);border-radius:16px;box-shadow:0 8px 24px rgba(20,45,100,.06);display:flex;flex-direction:column;overflow:hidden;position:relative}
+  .pcard.hot{border:1.8px solid rgba(31,86,230,.6)}
+  .pcard .ph{padding:16px 18px 13px;border-bottom:1px solid rgba(20,50,120,.08)}
+  .pcard.hot .ph{background:linear-gradient(100deg,#1f56e6,#4d8bff)}
+  .pcard .pn{font-size:1rem;font-weight:800;color:#14203a}
+  .pcard.hot .pn{color:#fff}
+  .pcard .pp{font-size:1.6rem;font-weight:900;color:#1f56e6;margin-top:5px;line-height:1}
+  .pcard.hot .pp{color:#fff}
+  .pcard .pp small{font-size:.72rem;font-weight:700;color:#5a6a86}
+  .pcard.hot .pp small{color:#dbe7ff}
+  .pcard .pos{font-size:.75rem;color:#5a6a86;margin-top:6px;line-height:1.35}
+  .pcard.hot .pos{color:#eaf1ff}
+  .pcard .pf{padding:13px 18px;flex:1;font-size:.8rem;color:#3a4a67;line-height:1.4}
+  .pcard .pf .li{position:relative;padding-left:17px;margin:6px 0}
+  .pcard .pf .li::before{content:"✓";position:absolute;left:0;top:0;color:#1f56e6;font-weight:800}
+  .pcard .pf .li b{color:#14203a}
+  .pcard .pf .gift{color:#c2760a;font-weight:700}
+  .pcard .pf .gift::before{content:"";}
+  .pcard .rib{position:absolute;top:14px;right:-32px;transform:rotate(45deg);background:#1f56e6;color:#fff;font-size:.64rem;font-weight:800;padding:3px 36px}
+  /* matrix */
+  .mtx{width:100%;border-collapse:collapse;margin-top:16px;font-size:.78rem}
+  .mtx th,.mtx td{padding:6px 12px;border-bottom:1px solid rgba(20,50,120,.08)}
+  .mtx thead th{background:#0d1b2e;color:#fff;font-weight:800;text-align:center}
+  .mtx thead th.f{text-align:left}
+  .mtx thead th.hi{background:#1f56e6}
+  .mtx td.feat{color:#14203a;font-weight:600;width:34%}
+  .mtx td.v{color:#5a6a86;text-align:center}
+  .mtx td.hi{color:#1f56e6;font-weight:700;background:rgba(31,86,230,.05);text-align:center}
+  .mtx td.no{color:#c2cbd8;text-align:center}
+  .mtx tr.mod td{background:#eef3fb;color:#1f56e6;font-weight:800;font-size:.74rem}
   @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2,.tgrid{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
@@ -309,23 +344,43 @@
 
   <!-- P8 · 三大产品服务 -->
   <section class="slide">
-    <div class="kick">核心产品 · 内容</div>
-    <h2>我们的核心产品,就是<span class="grad">「内容」</span></h2>
-    <p class="sub" style="margin-top:6px;max-width:80ch">这正是 CatcherX <b>有别于其他 GEO/SEO 服务商</b>的根本。核心产品拆开,就是两件:</p>
-    <div class="cols2" style="margin-top:18px">
-      <div class="card">
-        <div class="pillhead">① 内容 API<span class="badge">核心</span></div>
-        <div class="d">把数据与内容能力<b>产品化</b>,直接接入客户系统。<br><br>
-        · <b>标准版 $6,000/年</b>:进阶接口、信源定制、文章/快讯(近 3 天)、5 分钟延迟<br>
-        · <b>企业定制版</b>:0 延迟实时同步、多语言与定制数据源、AI 内容摘要/解析、专属标签体系、7×24 1v1 支持</div>
+    <div class="kick">套餐与价格 · 月度订阅</div>
+    <h2>三档套餐,从<span class="grad">起步试水</span>到<span class="grad">系统化增长</span></h2>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="ph"><div class="pn">基础版</div><div class="pp">$600<small> / 月</small></div><div class="pos">已有新闻页、想低成本起步试水</div></div>
+        <div class="pf">
+          <div class="li">SEO/GEO 现状诊断</div>
+          <div class="li">信源 <b>1500+</b> · 5 分钟延时</div>
+          <div class="li">AI 深度翻译 <b>10 种</b></div>
+          <div class="li">内容 API 接入</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="pillhead">② 基于用户意图的有效内容<span class="badge">核心</span></div>
-        <div class="d">围绕<b>产品 / 场景 / 问题 / 对比词</b>建立覆盖;品牌知识库引用,减少泛泛 AI 内容;内链 / 外链 + Schema 结构化;标题 / 摘要 / FAQ / CTA 转化路径设计。<br><br>
-        · <b>月产 10 篇 · 2000–3000 字/篇</b>(可定制月交付 50 篇)</div>
+      <div class="pcard">
+        <div class="rib">推荐</div>
+        <div class="ph"><div class="pn">加速版</div><div class="pp">$13,000<small> / 月</small></div><div class="pos">系统提升 GEO/SEO 与 AI 可见度</div></div>
+        <div class="pf">
+          <div class="li">诊断月更 + 用户画像 + 竞品缺口</div>
+          <div class="li">全站技术 SEO / CTA / GA4</div>
+          <div class="li">RootData 研报 <b>1 篇</b> · 关键词·提示词各 <b>50</b></div>
+          <div class="li">快讯 5 / 文章 2 · 深度内容 <b>~500 条</b></div>
+          <div class="li">6D-GEO 全引擎可见度优化</div>
+          <div class="li">外链 2 渠道 · 季度报告 · 优先响应</div>
+          <div class="li gift">🎁 1 年起合作,免费搭建新闻站</div>
+        </div>
+      </div>
+      <div class="pcard hot">
+        <div class="ph"><div class="pn">旗舰版</div><div class="pp">$20,000<small> / 月</small></div><div class="pos">打通信息量与交易流的系统化增长</div></div>
+        <div class="pf">
+          <div class="li"><b>含加速版全部</b>,并升级:</div>
+          <div class="li">信源 +200 · <b>0 延时</b> · 定制翻译 20 种</div>
+          <div class="li">RootData 研报 2 篇 · <b>交易所排名月度维护</b></div>
+          <div class="li">关键词·提示词各 <b>150</b> · 深度内容 <b>~1000 条</b></div>
+          <div class="li">外链 5 渠道 · AI 可见度月检 · 月度报告 · 最高优先</div>
+          <div class="li gift">🎁 半年起合作,免费搭建新闻站</div>
+        </div>
       </div>
     </div>
-    <div class="deprio">配套(非主推):<b>渠道分发</b> —— GEO/SEO 初期需要投一下,但只是小阶段、市场供给充足;<b>新闻页建站</b> —— 可合作,但客户决策链路较长。</div>
   </section>
 
   <!-- P9 · 产品二详解 -->
@@ -379,38 +434,33 @@
 
   <!-- 产品服务类型 -->
   <section class="slide">
-    <div class="kick">产品服务类型 · 由轻到重</div>
-    <h2>三类产品服务,匹配不同阶段的<span class="grad">客户需求</span></h2>
-    <div class="tiers">
-      <div class="tier">
-        <div class="th"><div class="lv">第一类 · 入门</div><div class="nm">内容 · 内容托管</div></div>
-        <div class="body">
-          <div class="li">常规付费 <b>API $6,000/年</b>(标准信源接口)</div>
-          <div class="li"><b>定制化 API</b>:依托领先 Crypto 项目与新闻平台,实时捕捉用户意图,结合客户平台资产清单定制</div>
-        </div>
-        <div class="goal">🎯 围绕 Google 收录 + 搜索结果排序 + AI 能见度(得分)优化</div>
-        <div class="fit"><b>适配</b>:已有新闻页、想早期尝试的客户</div>
-      </div>
-      <div class="tier">
-        <div class="th"><div class="lv">第二类 · 进阶</div><div class="nm">文章撰写</div></div>
-        <div class="body">
-          <div class="li">提供详细 <b>GEO/SEO 诊断报告</b></div>
-          <div class="li">结合真实搜索、新闻浏览等<b>行为数据库</b>,实时捕捉用户意图</div>
-          <div class="li">给出具体<b>关键词 / 提示词优化</b>,输出文章</div>
-        </div>
-        <div class="goal">🎯 达成基础 GEO/SEO 效果,构建核心品牌关键词/提示词,精准匹配自然搜索</div>
-        <div class="fit"><b>适配</b>:对关键词 / 提示词优化有明确需求的客户</div>
-      </div>
-      <div class="tier hot">
-        <div class="th"><div class="lv">第三类 · 重度</div><div class="nm">重度 GEO/SEO 服务</div></div>
-        <div class="body">
-          <div class="li">全链路:<b>新闻页搭建 → 定制化 API → 网站权重提升 → 定制化交易决策信息</b></div>
-          <div class="li">打通<b>外部流量捕获</b>与<b>站内交易活跃</b></div>
-        </div>
-        <div class="goal">🎯 从捕获外部流量,到提升站内用户的交易活跃度</div>
-        <div class="fit"><b>适配</b>:需系统化打通"信息量 + 交易流"的客户</div>
-      </div>
-    </div>
+    <div class="kick">完整能力矩阵 · 三档对比</div>
+    <h2>每一档,具体<span class="grad">包含什么</span></h2>
+    <table class="mtx">
+      <thead><tr><th class="f">能力(按模块)</th><th>基础版 $600/月</th><th>加速版 $13,000/月</th><th class="hi">旗舰版 $20,000/月</th></tr></thead>
+      <tbody>
+        <tr class="mod"><td colspan="4">策略与诊断</td></tr>
+        <tr><td class="feat">SEO/GEO 现状诊断(抓取/索引/AI 可见性/关键词)</td><td class="v">有</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">深度用户画像 + 竞品内容缺口盘点</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr class="mod"><td colspan="4">现有网站优化</td></tr>
+        <tr><td class="feat">技术 SEO 修复 · CTA 策略 · GSC/GA4 接入</td><td class="no">—</td><td class="v">有</td><td class="hi">有</td></tr>
+        <tr class="mod"><td colspan="4">内容生产</td></tr>
+        <tr><td class="feat">信源数量</td><td class="v">1500+</td><td class="v">+100</td><td class="hi">+200</td></tr>
+        <tr><td class="feat">时效性</td><td class="v">5 分钟</td><td class="v">3 分钟</td><td class="hi">0 延时</td></tr>
+        <tr><td class="feat">多语种</td><td class="v">翻译 10 种</td><td class="v">15 种</td><td class="hi">定制 20 种</td></tr>
+        <tr><td class="feat">RootData 公司研报 / 交易所排名维护</td><td class="no">—</td><td class="v">研报 1 篇</td><td class="hi">研报 2 篇 + 排名月更</td></tr>
+        <tr><td class="feat">核心关键词 · 品牌词</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">快讯 / 文章(ChainCatcher+10 矩阵号)</td><td class="no">—</td><td class="v">5 条 / 2 篇</td><td class="hi">10 条 / 5 篇</td></tr>
+        <tr><td class="feat">真实行为深度内容 · 权重网站分发</td><td class="no">—</td><td class="v">~500 条 · 2 渠道</td><td class="hi">~1000 条 · 5 渠道</td></tr>
+        <tr class="mod"><td colspan="4">AI 搜索与权威</td></tr>
+        <tr><td class="feat">核心提示词发掘维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">6D-GEO 全引擎可见度 + GEO 适配改造</td><td class="no">—</td><td class="v">有</td><td class="hi">有</td></tr>
+        <tr><td class="feat">AI 搜索可见度观察</td><td class="no">—</td><td class="v">部分抽查</td><td class="hi">月度检查</td></tr>
+        <tr class="mod"><td colspan="4">服务与响应</td></tr>
+        <tr><td class="feat">复盘报告 / 响应优先级</td><td class="v">标准</td><td class="v">季度 / 优先</td><td class="hi">月度 / 最高</td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:12px">🎁 旗舰版半年起、加速版 1 年起合作,均免费搭建一套高质量新闻站</p>
   </section>
 
   <!-- P11 · 度量 -->
@@ -426,27 +476,7 @@
     <p class="small" style="margin-top:18px">* 图示为指标口径示意 · 真实客户案例陆续公布</p>
   </section>
 
-  <!-- P12 · 服务模式 -->
-  <section class="slide">
-    <div class="kick">怎么合作 · 内容托管订阅</div>
-    <h2>你说清目标,增长<span class="grad">交给我们</span> —— 按月订阅</h2>
-    <div class="cols2">
-      <div>
-        <div class="card"><div class="t">你提供</div><div class="d">增长目标 · 优先项目/币种 · 品牌口径与边界</div></div>
-        <div class="card" style="margin-top:14px"><div class="t">我们负责</div><div class="d">意图挖掘 → 数据回填 → 原创内容 → 结构化 → 冷启动分发 → 度量迭代</div></div>
-      </div>
-      <div>
-        <ul style="margin-top:0">
-          <li><b>按月订阅</b>:持续内容产出与优化(recurring)</li>
-          <li><b>建站</b>:按普通项交付,不做高利润捆绑</li>
-          <li><b>渠道分发</b>:仅冷启动阶段性投入,不绑长期成本</li>
-        </ul>
-      </div>
-    </div>
-    <div class="callout" style="font-size:clamp(1rem,1.6vw,1.3rem)">核心卖的是<span class="grad">稀缺的意图数据 + 内容能力</span> —— 不是建站,不是买量</div>
-  </section>
-
-  <!-- P13 · 现在开始 -->
+  <!-- 现在开始 -->
   <section class="slide">
     <div class="kick">现在就开始</div>
     <h2>第一步,先<span class="grad">免费看清</span>你的现状</h2>
