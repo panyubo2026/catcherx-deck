@@ -189,16 +189,16 @@
   .pcard .pf .gift::before{content:"";}
   .pcard .rib{position:absolute;top:14px;right:-32px;transform:rotate(45deg);background:#1f56e6;color:#fff;font-size:.64rem;font-weight:800;padding:3px 36px}
   /* matrix */
-  .mtx{width:100%;border-collapse:collapse;margin-top:16px;font-size:.78rem}
-  .mtx th,.mtx td{padding:6px 12px;border-bottom:1px solid rgba(20,50,120,.08)}
-  .mtx thead th{background:#0d1b2e;color:#fff;font-weight:800;text-align:center}
+  .mtx{width:100%;border-collapse:collapse;margin-top:10px;font-size:.64rem}
+  .mtx th,.mtx td{padding:2.5px 9px;border-bottom:1px solid rgba(20,50,120,.07);line-height:1.2}
+  .mtx thead th{background:#0d1b2e;color:#fff;font-weight:800;text-align:center;padding:6px 9px}
   .mtx thead th.f{text-align:left}
   .mtx thead th.hi{background:#1f56e6}
-  .mtx td.feat{color:#14203a;font-weight:600;width:34%}
+  .mtx td.feat{color:#14203a;font-weight:600;width:42%}
   .mtx td.v{color:#5a6a86;text-align:center}
   .mtx td.hi{color:#1f56e6;font-weight:700;background:rgba(31,86,230,.05);text-align:center}
   .mtx td.no{color:#c2cbd8;text-align:center}
-  .mtx tr.mod td{background:#eef3fb;color:#1f56e6;font-weight:800;font-size:.74rem}
+  .mtx tr.mod td{background:#eef3fb;color:#1f56e6;font-weight:800;font-size:.62rem;padding-top:3.5px;padding-bottom:3.5px}
   /* db composition (P4) */
   .dbwrap{display:flex;align-items:stretch;gap:12px;margin-top:26px}
   .dbsrc{flex:1 1 0;min-width:0;background:#f5f8fd;border:1px solid rgba(20,50,120,.12);border-radius:14px;padding:20px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center}
@@ -348,29 +348,41 @@
   <!-- 完整能力矩阵(移到案例前) -->
   <section class="slide">
     <div class="kick">完整能力矩阵 · 三档对比</div>
-    <h2>每一档,具体<span class="grad">包含什么</span></h2>
+    <h2 style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:4px">每一档,具体<span class="grad">包含什么</span></h2>
     <table class="mtx">
       <thead><tr><th class="f">能力(按模块)</th><th>基础版 $600/月</th><th>加速版 $13,000/月<span class="morepop">更受欢迎</span></th><th class="hi">旗舰版 $20,000/月</th></tr></thead>
       <tbody>
-        <tr class="mod"><td colspan="4">策略与诊断</td></tr>
-        <tr><td class="feat">SEO/GEO 现状诊断(抓取/索引/AI 可见性/关键词)</td><td class="v">✅</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
-        <tr><td class="feat">深度用户画像 + 竞品内容缺口盘点</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
-        <tr class="mod"><td colspan="4">现有网站优化</td></tr>
-        <tr><td class="feat">技术 SEO 修复 · CTA 策略 · GSC/GA4 接入</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr class="mod"><td colspan="4">内容生产</td></tr>
-        <tr><td class="feat">信源数量</td><td class="v">1500+</td><td class="v">+100</td><td class="hi">+200</td></tr>
-        <tr><td class="feat">时效性</td><td class="v">5 分钟</td><td class="v">3 分钟</td><td class="hi">0 延时</td></tr>
-        <tr><td class="feat">多语种</td><td class="v">翻译 10 种</td><td class="v">15 种</td><td class="hi">定制 20 种</td></tr>
-        <tr><td class="feat">RootData 公司研报 / 交易所排名维护</td><td class="no">—</td><td class="v">研报 1 篇</td><td class="hi">研报 2 篇 + 排名月更</td></tr>
-        <tr><td class="feat">核心关键词 · 品牌词</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
-        <tr><td class="feat">快讯 / 文章(ChainCatcher+10 矩阵号)</td><td class="no">—</td><td class="v">5 条 / 2 篇</td><td class="hi">10 条 / 5 篇</td></tr>
-        <tr><td class="feat">真实行为深度内容 · 权重网站分发</td><td class="no">—</td><td class="v">~500 条 · 2 渠道</td><td class="hi">~1000 条 · 5 渠道</td></tr>
-        <tr class="mod"><td colspan="4">AI 搜索与权威</td></tr>
-        <tr><td class="feat">核心提示词发掘维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
-        <tr><td class="feat">6D-GEO 全引擎可见度 + GEO 适配改造</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr class="mod"><td colspan="4">模块一 · 策略与诊断</td></tr>
+        <tr><td class="feat">SEO/GEO 现状诊断(抓取、索引、AI 可见性、关键词等)</td><td class="v">✅</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">深度用户画像 + 交易旅程分析</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">竞品内容缺口与搜索机会盘点</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr class="mod"><td colspan="4">模块二 · 现有网站优化</td></tr>
+        <tr><td class="feat">页面文案与表达优化</td><td class="no">—</td><td class="v">新闻频道检查</td><td class="hi">新闻频道检查</td></tr>
+        <tr><td class="feat">技术 SEO 体检与修复(Title、Schema、内链、性能)</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">页面 CTA 转化策略指导</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">Google Search Console / GA4 数据接入建议</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">重点页面 Title / Description 优化建议</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr class="mod"><td colspan="4">模块三 · 内容生产</td></tr>
+        <tr><td class="feat">信源</td><td class="v">1500+</td><td class="v">可按需新增 100 个</td><td class="hi">可按需新增 200 个</td></tr>
+        <tr><td class="feat">时效性</td><td class="v">5 分钟延时</td><td class="v">3 分钟延时</td><td class="hi">0 延时</td></tr>
+        <tr><td class="feat">AI 摘要 / 解析功能</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">多语种数量</td><td class="v">AI 深度翻译 10 种</td><td class="v">AI 深度翻译 15 种</td><td class="hi">定制化翻译 20 种</td></tr>
+        <tr><td class="feat">由 RootData 发布的专业公司研报分析</td><td class="no">—</td><td class="v">1 篇</td><td class="hi">2 篇</td></tr>
+        <tr><td class="feat">由 RootData 更新维护的排名(交易所)</td><td class="no">—</td><td class="no">—</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">核心关键词、品牌词发掘与维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">由 ChainCatcher 及 10+ 矩阵号发布的快讯数量</td><td class="no">—</td><td class="v">5 条</td><td class="hi">10 条</td></tr>
+        <tr><td class="feat">由 ChainCatcher 及 10+ 矩阵号发布的文章数量</td><td class="no">—</td><td class="v">2 篇</td><td class="hi">5 篇</td></tr>
+        <tr><td class="feat">基于用户真实行为轨迹的深度内容创作</td><td class="no">—</td><td class="v">～500 条</td><td class="hi">～1000 条</td></tr>
+        <tr><td class="feat">权重网站分发数量</td><td class="no">—</td><td class="v">每月外链库选 2 个渠道</td><td class="hi">每月外链库选 5 个渠道</td></tr>
+        <tr class="mod"><td colspan="4">模块四 · AI 搜索与权威</td></tr>
+        <tr><td class="feat">核心提示词发掘与维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">GEO 答案单元优化</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">6D-GEO 全引擎可见度优化(AIO、ChatGPT、Perplexity、Gemini)</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">网站 GEO 适配性改造(实体表达、答案块、FAQ、Schema 与证据链)</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
         <tr><td class="feat">AI 搜索可见度观察</td><td class="no">—</td><td class="v">部分抽查</td><td class="hi">月度检查</td></tr>
-        <tr class="mod"><td colspan="4">服务与响应</td></tr>
-        <tr><td class="feat">复盘报告 / 响应优先级</td><td class="v">标准</td><td class="v">季度 / 优先</td><td class="hi">月度 / 最高</td></tr>
+        <tr class="mod"><td colspan="4">模块五 · 服务与响应</td></tr>
+        <tr><td class="feat">复盘报告</td><td class="no">—</td><td class="v">季度报告</td><td class="hi">月度报告</td></tr>
+        <tr><td class="feat">响应优先级</td><td class="v">标准</td><td class="v">优先</td><td class="hi">最高优先</td></tr>
       </tbody>
     </table>
     <p style="margin-top:12px;color:#e5484d;font-weight:700;font-size:.92rem">🎁 旗舰版半年起、加速版 1 年起合作,均免费搭建一套高质量新闻站</p>
