@@ -220,6 +220,27 @@
   .pyr-row.base{width:100%;background:#eef3fb;color:#14203a;font-size:1rem;border:1px solid rgba(31,86,230,.18)}
   .pyr-sub{display:block;font-weight:600;font-size:.8rem;opacity:.92;margin-top:3px}
   .morepop{display:inline-block;background:#e5484d;color:#fff;font-size:.62rem;font-weight:800;border-radius:5px;padding:2px 7px;margin-left:7px;vertical-align:middle}
+  /* moat data-flow (P4) */
+  .moat{display:flex;align-items:center;gap:18px;margin-top:20px}
+  .moat-src{display:flex;flex-direction:column;gap:11px;flex:0 0 auto;width:290px}
+  .msrc{background:#f5f8fd;border:1px solid rgba(20,50,120,.12);border-radius:12px;padding:11px 15px}
+  .msrc .h{display:flex;align-items:baseline;gap:8px}
+  .msrc .h .ic{font-size:1rem}
+  .msrc .h .t{font-weight:800;color:#14203a;font-size:.95rem}
+  .msrc .h .s{color:#1f56e6;font-weight:700;font-size:.82rem}
+  .msrc .d{color:#5a6a86;font-size:.78rem;margin-top:5px;line-height:1.4}
+  .moat-arrow{color:#1f56e6;font-size:1.5rem;font-weight:800;flex:0 0 auto}
+  .moat-db{flex:0 0 auto;width:180px;background:linear-gradient(135deg,#1f56e6,#4d8bff);color:#fff;border-radius:14px;padding:28px 16px;text-align:center;font-weight:800;font-size:1.02rem;line-height:1.35;box-shadow:0 10px 26px rgba(31,86,230,.25)}
+  .moat-out{flex:1 1 0;min-width:0;background:#eef3fb;border:1px solid rgba(31,86,230,.18);border-radius:14px;padding:22px 20px}
+  .moat-out .t{font-weight:800;color:#14203a;font-size:1.05rem}
+  .moat-out .s{color:#5a6a86;font-size:.82rem;margin-top:8px;line-height:1.4}
+  /* flywheel (闭环页) */
+  .fw{display:flex;align-items:center;gap:44px;margin-top:18px}
+  .fw-svg{flex:0 0 auto;width:330px;height:auto}
+  .fw-desc{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:18px}
+  .fw-item .t{font-weight:800;color:#14203a;font-size:1.08rem}
+  .fw-item .d{color:#5a6a86;font-size:.92rem;line-height:1.5;margin-top:5px}
+  .fw-item .d b{color:#1f56e6}
   @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2,.tgrid{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
@@ -292,12 +313,18 @@
   <!-- 护城河 + 数据源头(合并 P4+P5,金字塔) -->
   <section class="slide">
     <div class="kick">我们凭什么不同 · 护城河</div>
-    <h2>别人做"优化",我们<span class="grad">掌握源头数据 + 把它变成内容的能力</span></h2>
+    <h2>别人做"优化",我们<span class="grad">掌握独特的用户意图数据 + 把它变成内容的能力</span></h2>
     <p class="sub" style="margin-top:6px;max-width:none">加密世界最大的搜索流量,源头是<b>项目数据与新闻动态</b>——而这,正是我们数据库的主场。</p>
-    <div class="pyr">
-      <div class="pyr-row apex">被 Google / AI 引用的内容<span class="pyr-sub">ChainCatcher 8 年内容能力 · 高权重站点天生被收录</span></div>
-      <div class="pyr-row mid">独特的用户意图行为数据库</div>
-      <div class="pyr-row base">三源独家数据:项目数据(RootData) · 项目新闻动态(ChainCatcher) · 高价值用户交易数据(外采)</div>
+    <div class="moat">
+      <div class="moat-src">
+        <div class="msrc"><div class="h"><span class="ic">📊</span><span class="t">项目数据</span><span class="s">RootData</span></div><div class="d">12,000+ 项目全景数据<br>融资 / 团队 / 产品 / 链上指标</div></div>
+        <div class="msrc"><div class="h"><span class="ic">📰</span><span class="t">项目新闻动态</span><span class="s">ChainCatcher</span></div><div class="d">60,000+ 原创内容<br>8 年行业新闻沉淀</div></div>
+        <div class="msrc"><div class="h"><span class="ic">📈</span><span class="t">用户交易数据</span><span class="s">外采合作</span></div><div class="d">高价值用户行为轨迹<br>搜索 / 收藏 / 转发意图</div></div>
+      </div>
+      <div class="moat-arrow">→</div>
+      <div class="moat-db">独特的用户意图<br>行为数据库</div>
+      <div class="moat-arrow">→</div>
+      <div class="moat-out"><div class="t">被 Google / AI 引用的内容</div><div class="s">ChainCatcher 8 年内容能力 · 高权重站点天生被收录</div></div>
     </div>
     <p class="small" style="margin-top:16px;text-align:center">执行会被 AI 商品化,数据资产不会——这是对手抄不走的护城河。</p>
   </section>
@@ -350,42 +377,69 @@
     <div class="kick">完整能力矩阵 · 三档对比</div>
     <h2 style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:4px">每一档,具体<span class="grad">包含什么</span></h2>
     <table class="mtx">
-      <thead><tr><th class="f">能力(按模块)</th><th>基础版 $600/月</th><th>加速版 $13,000/月<span class="morepop">更受欢迎</span></th><th class="hi">旗舰版 $20,000/月</th></tr></thead>
+      <thead><tr><th class="f">能力(按模块)</th><th>基础版 $800/月</th><th>加速版 $13,000/月<span class="morepop">更受欢迎</span></th><th class="hi">旗舰版 $20,000/月</th></tr></thead>
       <tbody>
         <tr class="mod"><td colspan="4">模块一 · 策略与诊断</td></tr>
         <tr><td class="feat">SEO/GEO 现状诊断(抓取、索引、AI 可见性、关键词等)</td><td class="v">✅</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
-        <tr><td class="feat">深度用户画像 + 交易旅程分析</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
-        <tr><td class="feat">竞品内容缺口与搜索机会盘点</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">深度用户画像 + 交易旅程分析</td><td class="no">❌</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">竞品内容缺口与搜索机会盘点</td><td class="no">❌</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
         <tr class="mod"><td colspan="4">模块二 · 现有网站优化</td></tr>
-        <tr><td class="feat">页面文案与表达优化</td><td class="no">—</td><td class="v">新闻频道检查</td><td class="hi">新闻频道检查</td></tr>
-        <tr><td class="feat">技术 SEO 体检与修复(Title、Schema、内链、性能)</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">页面 CTA 转化策略指导</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">Google Search Console / GA4 数据接入建议</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">重点页面 Title / Description 优化建议</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">页面文案与表达优化</td><td class="no">❌</td><td class="v">新闻频道检查</td><td class="hi">新闻频道检查</td></tr>
+        <tr><td class="feat">技术 SEO 体检与修复(Title、Schema、内链、性能)</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">页面 CTA 转化策略指导</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">Google Search Console / GA4 数据接入建议</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">重点页面 Title / Description 优化建议</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
         <tr class="mod"><td colspan="4">模块三 · 内容生产</td></tr>
         <tr><td class="feat">信源</td><td class="v">1500+</td><td class="v">可按需新增 100 个</td><td class="hi">可按需新增 200 个</td></tr>
         <tr><td class="feat">时效性</td><td class="v">5 分钟延时</td><td class="v">3 分钟延时</td><td class="hi">0 延时</td></tr>
-        <tr><td class="feat">AI 摘要 / 解析功能</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">AI 摘要 / 解析功能</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
         <tr><td class="feat">多语种数量</td><td class="v">AI 深度翻译 10 种</td><td class="v">AI 深度翻译 15 种</td><td class="hi">定制化翻译 20 种</td></tr>
-        <tr><td class="feat">由 RootData 发布的专业公司研报分析</td><td class="no">—</td><td class="v">1 篇</td><td class="hi">2 篇</td></tr>
-        <tr><td class="feat">由 RootData 更新维护的排名(交易所)</td><td class="no">—</td><td class="no">—</td><td class="hi">月度更新</td></tr>
-        <tr><td class="feat">核心关键词、品牌词发掘与维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
-        <tr><td class="feat">由 ChainCatcher 及 10+ 矩阵号发布的快讯数量</td><td class="no">—</td><td class="v">5 条</td><td class="hi">10 条</td></tr>
-        <tr><td class="feat">由 ChainCatcher 及 10+ 矩阵号发布的文章数量</td><td class="no">—</td><td class="v">2 篇</td><td class="hi">5 篇</td></tr>
-        <tr><td class="feat">基于用户真实行为轨迹的深度内容创作</td><td class="no">—</td><td class="v">～500 条</td><td class="hi">～1000 条</td></tr>
-        <tr><td class="feat">权重网站分发数量</td><td class="no">—</td><td class="v">每月外链库选 2 个渠道</td><td class="hi">每月外链库选 5 个渠道</td></tr>
+        <tr><td class="feat">由 RootData 发布的专业公司研报分析</td><td class="no">❌</td><td class="v">1 篇</td><td class="hi">2 篇</td></tr>
+        <tr><td class="feat">由 RootData 更新维护的排名(交易所)</td><td class="no">❌</td><td class="no">❌</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">核心关键词、品牌词发掘与维护</td><td class="no">❌</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">由 ChainCatcher 及 10+ 矩阵号发布的快讯数量</td><td class="no">❌</td><td class="v">5 条</td><td class="hi">10 条</td></tr>
+        <tr><td class="feat">由 ChainCatcher 及 10+ 矩阵号发布的文章数量</td><td class="no">❌</td><td class="v">2 篇</td><td class="hi">5 篇</td></tr>
+        <tr><td class="feat">基于用户真实行为轨迹的深度内容创作</td><td class="no">❌</td><td class="v">～500 条</td><td class="hi">～1000 条</td></tr>
+        <tr><td class="feat">权重网站分发数量</td><td class="no">❌</td><td class="v">每月外链库选 2 个渠道</td><td class="hi">每月外链库选 5 个渠道</td></tr>
         <tr class="mod"><td colspan="4">模块四 · AI 搜索与权威</td></tr>
-        <tr><td class="feat">核心提示词发掘与维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
-        <tr><td class="feat">GEO 答案单元优化</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">6D-GEO 全引擎可见度优化(AIO、ChatGPT、Perplexity、Gemini)</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">网站 GEO 适配性改造(实体表达、答案块、FAQ、Schema 与证据链)</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">AI 搜索可见度观察</td><td class="no">—</td><td class="v">部分抽查</td><td class="hi">月度检查</td></tr>
+        <tr><td class="feat">核心提示词发掘与维护</td><td class="no">❌</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">GEO 答案单元优化</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">6D-GEO 全引擎可见度优化(AIO、ChatGPT、Perplexity、Gemini)</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">网站 GEO 适配性改造(实体表达、答案块、FAQ、Schema 与证据链)</td><td class="no">❌</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">AI 搜索可见度观察</td><td class="no">❌</td><td class="v">部分抽查</td><td class="hi">月度检查</td></tr>
         <tr class="mod"><td colspan="4">模块五 · 服务与响应</td></tr>
-        <tr><td class="feat">复盘报告</td><td class="no">—</td><td class="v">季度报告</td><td class="hi">月度报告</td></tr>
+        <tr><td class="feat">复盘报告</td><td class="no">❌</td><td class="v">季度报告</td><td class="hi">月度报告</td></tr>
         <tr><td class="feat">响应优先级</td><td class="v">标准</td><td class="v">优先</td><td class="hi">最高优先</td></tr>
       </tbody>
     </table>
     <p style="margin-top:12px;color:#e5484d;font-weight:700;font-size:.92rem">🎁 旗舰版半年起、加速版 1 年起合作,均免费搭建一套高质量新闻站</p>
+  </section>
+
+  <!-- GEO/SEO 全链路闭环(飞轮) -->
+  <section class="slide">
+    <div class="kick">产品全景 · 增长飞轮</div>
+    <h2>GEO/SEO 服务的<span class="grad">全链路闭环</span></h2>
+    <div class="fw">
+      <svg viewBox="0 0 340 340" class="fw-svg" xmlns="http://www.w3.org/2000/svg">
+        <path d="M170,20 A150,150 0 0,1 299.9,245 L237.5,209 A78,78 0 0,0 170,92 Z" fill="#c7d9f8"/>
+        <path d="M299.9,245 A150,150 0 0,1 40.1,245 L102.5,209 A78,78 0 0,0 237.5,209 Z" fill="#dbe7fb"/>
+        <path d="M40.1,245 A150,150 0 0,1 170,20 L170,92 A78,78 0 0,0 102.5,209 Z" fill="#cfddf9"/>
+        <circle cx="170" cy="170" r="78" fill="#fff" stroke="rgba(31,86,230,.25)" stroke-width="2"/>
+        <text x="170" y="164" text-anchor="middle" font-size="15" font-weight="800" fill="#1f56e6">GEO/SEO</text>
+        <text x="170" y="186" text-anchor="middle" font-size="15" font-weight="800" fill="#1f56e6">增长飞轮</text>
+        <text x="72" y="106" text-anchor="middle" font-size="12" font-weight="800" fill="#14203a">特色一</text>
+        <text x="72" y="122" text-anchor="middle" font-size="10" fill="#5a6a86">品牌营销</text>
+        <text x="268" y="106" text-anchor="middle" font-size="12" font-weight="800" fill="#14203a">特色二</text>
+        <text x="268" y="122" text-anchor="middle" font-size="10" fill="#5a6a86">数据驱动内容</text>
+        <text x="170" y="280" text-anchor="middle" font-size="12" font-weight="800" fill="#14203a">特色三</text>
+        <text x="170" y="296" text-anchor="middle" font-size="10" fill="#5a6a86">新闻页建站</text>
+      </svg>
+      <div class="fw-desc">
+        <div class="fw-item"><div class="t">特色一 · 品牌营销</div><div class="d">ChainCatcher 媒体包 + RootData <b>独立研报</b> + 交易所排名优化。研报被 WSJ、CoinTelegraph、X 活跃 KOL 及 220+ 平台 API 引用</div></div>
+        <div class="fw-item"><div class="t">特色二 · 数据驱动内容核心引擎</div><div class="d">基于真实用户意图数据库,产出<b>稀缺、原创与可被 Google/AI 引用</b>的内容</div></div>
+        <div class="fw-item"><div class="t">特色三 · 新闻页建站</div><div class="d">高性价比新闻落地页,<b>适配 Google / AI 与用户</b>,承接并转化流量</div></div>
+      </div>
+    </div>
   </section>
 
   <!-- 客户成功案例(移到矩阵后) -->
