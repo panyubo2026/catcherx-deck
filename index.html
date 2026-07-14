@@ -211,6 +211,15 @@
   .authrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .authlab{font-size:.82rem;font-weight:800;color:#14203a;min-width:158px}
   .lgchip{background:#fff;border:1px solid rgba(20,50,120,.14);border-radius:8px;padding:7px 14px;font-weight:700;font-size:.86rem;color:#34426b;box-shadow:0 2px 8px rgba(20,45,100,.05)}
+  .lgo{height:34px;width:auto;max-width:150px;object-fit:contain;background:#fff;border:1px solid rgba(20,50,120,.1);border-radius:8px;padding:6px 12px;box-shadow:0 2px 8px rgba(20,45,100,.05)}
+  /* pyramid (merged P4+P5) */
+  .pyr{display:flex;flex-direction:column;align-items:center;gap:11px;margin-top:22px}
+  .pyr-row{border-radius:12px;padding:16px 22px;text-align:center;font-weight:800;box-shadow:0 6px 20px rgba(20,45,100,.06)}
+  .pyr-row.apex{width:52%;background:linear-gradient(100deg,#1f56e6,#4d8bff);color:#fff;font-size:1.05rem}
+  .pyr-row.mid{width:74%;background:#5b8def;color:#fff;font-size:1.05rem}
+  .pyr-row.base{width:100%;background:#eef3fb;color:#14203a;font-size:1rem;border:1px solid rgba(31,86,230,.18)}
+  .pyr-sub{display:block;font-weight:600;font-size:.8rem;opacity:.92;margin-top:3px}
+  .morepop{display:inline-block;background:#e5484d;color:#fff;font-size:.62rem;font-weight:800;border-radius:5px;padding:2px 7px;margin-left:7px;vertical-align:middle}
   @media(max-width:760px){.two,.cards,.steps,.steps.four,.deliver,.cols2,.tgrid{grid-template-columns:1fr}}
   @media print{
     @page{size:1280px 720px;margin:0}
@@ -237,7 +246,7 @@
   <section class="slide active">
     <div class="logo">Catcher<span class="x">X</span></div>
     <h2 style="margin-top:24px">通过 SEO/GEO 帮助企业<span class="grad">降低用户信任成本</span></h2>
-    <p class="slogan" style="max-width:none;white-space:nowrap;font-size:clamp(1.05rem,1.9vw,1.55rem)">借助独家的用户意图数据,变成能被 Google/AI 引用的内容</p>
+    <p class="slogan" style="max-width:none;white-space:nowrap;font-size:clamp(1.05rem,1.9vw,1.55rem)">借助独家的用户意图数据库,变成能被 Google/AI 引用的内容</p>
   </section>
 
   <!-- P2 · 趋势 -->
@@ -253,7 +262,7 @@
       <span class="lg" style="--dot:#0078d4">Bing</span>
     </div>
     <ul>
-      <li>越来越多用户用 ChatGPT / Perplexity / Google AI 概览做决策,而非翻搜索结果</li>
+      <li>越来越多用户直接<b>问 AI</b> 做决策,而不再翻搜索结果</li>
       <li><b>AI 的回答里没有你 = 你不存在</b></li>
     </ul>
     <div class="callout"><span class="grad">新规则</span> = 传统 SEO(被搜到) + GEO(被 AI 引用)</div>
@@ -280,38 +289,24 @@
     </div>
   </section>
 
-  <!-- P4 · 洞察(源头) -->
+  <!-- 护城河 + 数据源头(合并 P4+P5,金字塔) -->
   <section class="slide">
-    <div class="kick">一个被忽略的事实</div>
-    <h2>加密世界最大的搜索流量,源头是<span class="grad">项目数据与新闻动态</span></h2>
-    <div class="dbwrap">
-      <div class="dbsrc"><div class="dbt">项目数据</div><div class="dbs">RootData</div></div>
-      <div class="dbplus">+</div>
-      <div class="dbsrc"><div class="dbt">项目新闻动态</div><div class="dbs">ChainCatcher</div></div>
-      <div class="dbplus">+</div>
-      <div class="dbsrc"><div class="dbt">高价值用户交易数据</div><div class="dbs">外采</div></div>
-      <div class="dbeq">=</div>
-      <div class="dbres">独特的<br>用户意图<br>行为数据库</div>
-    </div>
-  </section>
-
-  <!-- P5 · 护城河 -->
-  <section class="slide">
-    <div class="kick">我们凭什么不同 · 掌握源头</div>
+    <div class="kick">我们凭什么不同 · 护城河</div>
     <h2>别人做"优化",我们<span class="grad">掌握源头数据 + 把它变成内容的能力</span></h2>
-    <div class="cards">
-      <div class="card"><div class="t">意图源头数据</div><div class="d">RootData 的记录,正好按用户与 AI 会查的<b>实体(项目/币种)与字段(融资/团队/指标)</b>结构化、实时更新——不只是"最大",是"对齐查询宇宙"</div></div>
-      <div class="card"><div class="t">8 年内容能力</div><div class="d">ChainCatcher 8 年经验,把数据变成<b>原创、高质量、可被 AI 引用</b>的内容</div></div>
-      <div class="card"><div class="t">高权重站点</div><div class="d">RootData / ChainCatcher 在 Google 与 AI 的高权重,内容天生被收录、被信任</div></div>
+    <p class="sub" style="margin-top:6px;max-width:none">加密世界最大的搜索流量,源头是<b>项目数据与新闻动态</b>——而这,正是我们数据库的主场。</p>
+    <div class="pyr">
+      <div class="pyr-row apex">被 Google / AI 引用的内容<span class="pyr-sub">ChainCatcher 8 年内容能力 · 高权重站点天生被收录</span></div>
+      <div class="pyr-row mid">独特的用户意图行为数据库</div>
+      <div class="pyr-row base">三源独家数据:项目数据(RootData) · 项目新闻动态(ChainCatcher) · 高价值用户交易数据(外采)</div>
     </div>
-    <p class="sub"><b>执行会被 AI 商品化,数据资产不会。</b>这就是数据驱动的 GEO/SEO——对手抄不走的护城河。</p>
+    <p class="small" style="margin-top:16px;text-align:center">执行会被 AI 商品化,数据资产不会——这是对手抄不走的护城河。</p>
   </section>
 
   <!-- 数据源 & 实证(合并 P6+P7) -->
   <section class="slide">
     <div class="kick">数据源 & 实证</div>
     <h2>我们的数据,已是 <span class="grad">AI 与搜索的权威信息源</span></h2>
-    <div class="callout" style="font-size:clamp(1rem,1.6vw,1.3rem);margin-top:12px">独家数据 → 独特内容 → <span class="grad">被引用、被搜到、被选择</span></div>
+    <div class="callout" style="font-size:clamp(1rem,1.6vw,1.3rem);margin-top:12px;align-self:center;text-align:center">独家数据 → 独特内容 → <span class="grad">被引用、被搜到、被选择</span></div>
     <div class="stats" style="margin-top:16px">
       <div class="stat"><div class="big">1200万+</div><div class="cap"><b>月均 PV</b><br>50亿+ 累计曝光 · 6万+ 原创内容<br>沉淀加密投资者 8 年行为意图</div></div>
       <div class="stat"><div class="big">行业绝对领先</div><div class="cap"><b>SEO / GEO 表现</b><br>自然搜索与 AI 引用份额全网领先</div></div>
@@ -319,53 +314,22 @@
     </div>
     <p class="small" style="margin-top:14px">核心用户 = <b style="color:var(--blue)">基本面投资者 + 行业从业者</b>,每个月处理他们超过 <b style="color:var(--blue)">420 万次</b>搜索请求。</p>
     <div class="authwrap">
-      <div class="authrow"><span class="authlab">被顶级媒体与机构引用</span><span class="lgchip">华尔街日报</span><span class="lgchip">CoinTelegraph</span><span class="lgchip">Binance Research</span><span class="lgchip">The Block</span></div>
-      <div class="authrow"><span class="authlab">被业内头部公司采用</span><span class="lgchip">Binance</span><span class="lgchip">OKX</span><span class="lgchip">Gate</span><span class="lgchip">Ethereum Foundation</span></div>
-    </div>
-  </section>
-
-  <!-- 套餐与价格 -->
-  <section class="slide">
-    <div class="kick">套餐与价格 · 月度订阅</div>
-    <h2>三档套餐,从<span class="grad">起步试水</span>到<span class="grad">系统化增长</span></h2>
-    <div class="pgrid">
-      <div class="pcard">
-        <div class="ph"><div class="pn">基础版</div><div class="pp">$600<small> / 月</small></div><div class="pos">已有新闻页、想低成本起步试水</div></div>
-        <div class="pf">
-          <div class="li">SEO/GEO 现状诊断</div>
-          <div class="li">信源 <b>1500+</b> · 5 分钟延时</div>
-          <div class="li">AI 深度翻译 <b>10 种</b></div>
-          <div class="li">内容 API 接入</div>
-        </div>
+      <div class="authrow"><span class="authlab">被顶级媒体与机构引用</span>
+        <img class="lgo" src="https://logo.clearbit.com/wsj.com" alt="WSJ">
+        <img class="lgo" src="https://logo.clearbit.com/cointelegraph.com" alt="CoinTelegraph">
+        <img class="lgo" src="https://logo.clearbit.com/binance.com" alt="Binance Research">
+        <img class="lgo" src="https://logo.clearbit.com/theblock.co" alt="The Block">
       </div>
-      <div class="pcard">
-        <div class="rib">推荐</div>
-        <div class="ph"><div class="pn">加速版</div><div class="pp">$13,000<small> / 月</small></div><div class="pos">系统提升 GEO/SEO 与 AI 可见度</div></div>
-        <div class="pf">
-          <div class="li">诊断月更 + 用户画像 + 竞品缺口</div>
-          <div class="li">全站技术 SEO / CTA / GA4</div>
-          <div class="li">RootData 研报 <b>1 篇</b> · 关键词·提示词各 <b>50</b></div>
-          <div class="li">快讯 5 / 文章 2 · 深度内容 <b>~500 条</b></div>
-          <div class="li">6D-GEO 全引擎可见度优化</div>
-          <div class="li">外链 2 渠道 · 季度报告 · 优先响应</div>
-          <div class="li gift">🎁 1 年起合作,免费搭建新闻站</div>
-        </div>
-      </div>
-      <div class="pcard hot">
-        <div class="ph"><div class="pn">旗舰版</div><div class="pp">$20,000<small> / 月</small></div><div class="pos">打通信息量与交易流的系统化增长</div></div>
-        <div class="pf">
-          <div class="li"><b>含加速版全部</b>,并升级:</div>
-          <div class="li">信源 +200 · <b>0 延时</b> · 定制翻译 20 种</div>
-          <div class="li">RootData 研报 2 篇 · <b>交易所排名月度维护</b></div>
-          <div class="li">关键词·提示词各 <b>150</b> · 深度内容 <b>~1000 条</b></div>
-          <div class="li">外链 5 渠道 · AI 可见度月检 · 月度报告 · 最高优先</div>
-          <div class="li gift">🎁 半年起合作,免费搭建新闻站</div>
-        </div>
+      <div class="authrow"><span class="authlab">被业内头部公司采用</span>
+        <img class="lgo" src="https://logo.clearbit.com/binance.com" alt="Binance">
+        <img class="lgo" src="https://logo.clearbit.com/okx.com" alt="OKX">
+        <img class="lgo" src="https://logo.clearbit.com/gate.io" alt="Gate">
+        <img class="lgo" src="https://logo.clearbit.com/ethereum.org" alt="Ethereum Foundation">
       </div>
     </div>
   </section>
 
-  <!-- P9 · 产品二详解 -->
+  <!-- 核心竞争力 -->
   <section class="slide">
     <div class="kick">我们的核心竞争力</div>
     <h2 style="font-size:clamp(1.35rem,2.9vw,2.15rem)">基于 <span class="grad">Crypto 最大项目数据库</span>,紧扣新闻、搜索查询等高频的<span class="grad">用户真实意图</span>,产出适配于客户的<span class="grad">有效内容</span></h2>
@@ -381,7 +345,38 @@
     <p class="sub" style="margin-top:16px">原料(独家数据)+ 加工(8 年经验)+ 全球化(多语)——市面上 GEO/SEO 服务商<b>做不到</b>的一层,我们全部自有。</p>
   </section>
 
-  <!-- P10 · 客户效果展示 -->
+  <!-- 完整能力矩阵(移到案例前) -->
+  <section class="slide">
+    <div class="kick">完整能力矩阵 · 三档对比</div>
+    <h2>每一档,具体<span class="grad">包含什么</span></h2>
+    <table class="mtx">
+      <thead><tr><th class="f">能力(按模块)</th><th>基础版 $600/月</th><th>加速版 $13,000/月<span class="morepop">更受欢迎</span></th><th class="hi">旗舰版 $20,000/月</th></tr></thead>
+      <tbody>
+        <tr class="mod"><td colspan="4">策略与诊断</td></tr>
+        <tr><td class="feat">SEO/GEO 现状诊断(抓取/索引/AI 可见性/关键词)</td><td class="v">✅</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr><td class="feat">深度用户画像 + 竞品内容缺口盘点</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
+        <tr class="mod"><td colspan="4">现有网站优化</td></tr>
+        <tr><td class="feat">技术 SEO 修复 · CTA 策略 · GSC/GA4 接入</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr class="mod"><td colspan="4">内容生产</td></tr>
+        <tr><td class="feat">信源数量</td><td class="v">1500+</td><td class="v">+100</td><td class="hi">+200</td></tr>
+        <tr><td class="feat">时效性</td><td class="v">5 分钟</td><td class="v">3 分钟</td><td class="hi">0 延时</td></tr>
+        <tr><td class="feat">多语种</td><td class="v">翻译 10 种</td><td class="v">15 种</td><td class="hi">定制 20 种</td></tr>
+        <tr><td class="feat">RootData 公司研报 / 交易所排名维护</td><td class="no">—</td><td class="v">研报 1 篇</td><td class="hi">研报 2 篇 + 排名月更</td></tr>
+        <tr><td class="feat">核心关键词 · 品牌词</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">快讯 / 文章(ChainCatcher+10 矩阵号)</td><td class="no">—</td><td class="v">5 条 / 2 篇</td><td class="hi">10 条 / 5 篇</td></tr>
+        <tr><td class="feat">真实行为深度内容 · 权重网站分发</td><td class="no">—</td><td class="v">~500 条 · 2 渠道</td><td class="hi">~1000 条 · 5 渠道</td></tr>
+        <tr class="mod"><td colspan="4">AI 搜索与权威</td></tr>
+        <tr><td class="feat">核心提示词发掘维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
+        <tr><td class="feat">6D-GEO 全引擎可见度 + GEO 适配改造</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
+        <tr><td class="feat">AI 搜索可见度观察</td><td class="no">—</td><td class="v">部分抽查</td><td class="hi">月度检查</td></tr>
+        <tr class="mod"><td colspan="4">服务与响应</td></tr>
+        <tr><td class="feat">复盘报告 / 响应优先级</td><td class="v">标准</td><td class="v">季度 / 优先</td><td class="hi">月度 / 最高</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;color:#e5484d;font-weight:700;font-size:.92rem">🎁 旗舰版半年起、加速版 1 年起合作,均免费搭建一套高质量新闻站</p>
+  </section>
+
+  <!-- 客户成功案例(移到矩阵后) -->
   <section class="slide">
     <div class="kick">客户成功案例 · 效果获认可</div>
     <h2>三大产品,各自跑出<span class="grad">客户认可的成果</span></h2>
@@ -414,50 +409,6 @@
     <p class="small" style="margin-top:14px">* 案例数据来自实际合作;部分客户按保密要求匿名;满意度评级为示意</p>
   </section>
 
-  <!-- 产品服务类型 -->
-  <section class="slide">
-    <div class="kick">完整能力矩阵 · 三档对比</div>
-    <h2>每一档,具体<span class="grad">包含什么</span></h2>
-    <table class="mtx">
-      <thead><tr><th class="f">能力(按模块)</th><th>基础版 $600/月</th><th>加速版 $13,000/月</th><th class="hi">旗舰版 $20,000/月</th></tr></thead>
-      <tbody>
-        <tr class="mod"><td colspan="4">策略与诊断</td></tr>
-        <tr><td class="feat">SEO/GEO 现状诊断(抓取/索引/AI 可见性/关键词)</td><td class="v">✅</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
-        <tr><td class="feat">深度用户画像 + 竞品内容缺口盘点</td><td class="no">—</td><td class="v">月度更新</td><td class="hi">月度更新</td></tr>
-        <tr class="mod"><td colspan="4">现有网站优化</td></tr>
-        <tr><td class="feat">技术 SEO 修复 · CTA 策略 · GSC/GA4 接入</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr class="mod"><td colspan="4">内容生产</td></tr>
-        <tr><td class="feat">信源数量</td><td class="v">1500+</td><td class="v">+100</td><td class="hi">+200</td></tr>
-        <tr><td class="feat">时效性</td><td class="v">5 分钟</td><td class="v">3 分钟</td><td class="hi">0 延时</td></tr>
-        <tr><td class="feat">多语种</td><td class="v">翻译 10 种</td><td class="v">15 种</td><td class="hi">定制 20 种</td></tr>
-        <tr><td class="feat">RootData 公司研报 / 交易所排名维护</td><td class="no">—</td><td class="v">研报 1 篇</td><td class="hi">研报 2 篇 + 排名月更</td></tr>
-        <tr><td class="feat">核心关键词 · 品牌词</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
-        <tr><td class="feat">快讯 / 文章(ChainCatcher+10 矩阵号)</td><td class="no">—</td><td class="v">5 条 / 2 篇</td><td class="hi">10 条 / 5 篇</td></tr>
-        <tr><td class="feat">真实行为深度内容 · 权重网站分发</td><td class="no">—</td><td class="v">~500 条 · 2 渠道</td><td class="hi">~1000 条 · 5 渠道</td></tr>
-        <tr class="mod"><td colspan="4">AI 搜索与权威</td></tr>
-        <tr><td class="feat">核心提示词发掘维护</td><td class="no">—</td><td class="v">50 个</td><td class="hi">150 个</td></tr>
-        <tr><td class="feat">6D-GEO 全引擎可见度 + GEO 适配改造</td><td class="no">—</td><td class="v">✅</td><td class="hi">✅</td></tr>
-        <tr><td class="feat">AI 搜索可见度观察</td><td class="no">—</td><td class="v">部分抽查</td><td class="hi">月度检查</td></tr>
-        <tr class="mod"><td colspan="4">服务与响应</td></tr>
-        <tr><td class="feat">复盘报告 / 响应优先级</td><td class="v">标准</td><td class="v">季度 / 优先</td><td class="hi">月度 / 最高</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:12px;color:#e5484d;font-weight:700;font-size:.92rem">🎁 旗舰版半年起、加速版 1 年起合作,均免费搭建一套高质量新闻站</p>
-  </section>
-
-  <!-- P11 · 度量 -->
-  <section class="slide">
-    <div class="kick">我们用数据说话</div>
-    <h2>不止"做内容",更交付<span class="grad">可验证的增长</span></h2>
-    <p class="sub" style="margin-top:14px">每个项目,我们都以统一口径追踪、并每月出具增长报告:</p>
-    <div class="bars">
-      <div class="bar"><div class="lab"><span>AI 被引用次数</span><span>投放前 → 投放后</span></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
-      <div class="bar"><div class="lab"><span>目标关键词可见度</span><span>投放前 → 投放后</span></div><div class="track"><div class="fill" style="width:64%"></div></div></div>
-      <div class="bar"><div class="lab"><span>自然流量 / 优质线索</span><span>投放前 → 投放后</span></div><div class="track"><div class="fill" style="width:52%"></div></div></div>
-    </div>
-    <p class="small" style="margin-top:18px">* 图示为指标口径示意 · 真实客户案例陆续公布</p>
-  </section>
-
   <!-- 现在开始 -->
   <section class="slide">
     <div class="kick">现在就开始</div>
@@ -478,7 +429,7 @@
 
 </div>
 
-<div class="brand">Catcher<b>X</b> · 数据驱动的 GEO/SEO 增长</div>
+<div class="brand">Catcher<b>X</b> · 帮助企业降低获客成本</div>
 <div class="counter"><span id="cur">1</span> / <span id="tot"></span></div>
 <div class="dots" id="dots"></div>
 
